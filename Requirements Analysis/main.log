@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  4 JUN 2021 16:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.10)  7 JUN 2021 09:02
 entering extended mode
 **./main.tex
 (main.tex
@@ -908,12 +908,22 @@ Overfull \hbox (7.08264pt too wide) in paragraph at lines 8--9
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
 []|\T1/bch/m/n/10.95 Vittorio
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+[]|\T1/bch/m/n/10.95 Vittorio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]|\T1/bch/m/n/10.95 Vittorio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 []|\T1/bch/m/n/10.95 Vittorio
  []
 
@@ -1173,12 +1183,18 @@ File: res/images/logo.jpg Graphic file (type jpg)
 Package pdftex.def Info: res/images/logo.jpg  used on input line 76.
 (pdftex.def)             Requested size: 54.66698pt x 28.45274pt.
 [32] (main.aux (res/first_page.aux) (res/register.aux))
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5AB3823492288FFAA21E59ACFC8FADC8;6203.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 2413AFA5F3EB1B18EB50BB680D1BE9C0;6269
+(rerunfilecheck)             After:  5AB3823492288FFAA21E59ACFC8FADC8;6203.
  ) 
 Here is how much of TeX's memory you used:
  21941 strings out of 479697
- 406102 string characters out of 2867134
+ 406401 string characters out of 2867133
  734835 words of memory out of 3000000
  38423 multiletter control sequences out of 15000+200000
  446335 words of font info for 73 fonts, out of 3000000 for 9000
@@ -1188,7 +1204,7 @@ Here is how much of TeX's memory you used:
 /Users/vitto/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchb8a.
 pfb><C:/Users/vitto/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/
 bchr8a.pfb>
-Output written on main.pdf (33 pages, 555245 bytes).
+Output written on main.pdf (33 pages, 555382 bytes).
 PDF statistics:
  560 PDF objects out of 1000 (max. 8388607)
  118 named destinations out of 1000 (max. 500000)
