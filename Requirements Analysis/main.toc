@@ -1,0 +1,68 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {section}{\numberline {1}Introduzione}{6}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Scopo del documento}{6}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Scopo del prodotto}{6}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Glossario}{6}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Descrizione generale}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Prospettive del prodotto}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Funzioni del prodotto}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Caratteristiche degli utenti}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Vincoli generali}{7}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Casi d'uso}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Attori}{8}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Utente}{8}{subsubsection.3.1.1}%
+\contentsline {paragraph}{\numberline {3.1.1.1}Utente non autenticato}{8}{paragraph.3.1.1.1}%
+\contentsline {paragraph}{\numberline {3.1.1.2}Utente autenticato}{8}{paragraph.3.1.1.2}%
+\contentsline {subsection}{\numberline {3.2}Elenco casi d'uso}{8}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}UC1 - Registrazione}{9}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}UC1.1 - Inserimento nome utente}{10}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}UC1.2 - Inserimento cognome utente}{10}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}UC1.3 - Inserimento email}{10}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}UC1.4 - Inserimento password}{10}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}UC1.5 - Conferma registrazione}{11}{subsubsection.3.2.6}%
+\contentsline {subsubsection}{\numberline {3.2.7}UC1.6 - Visualizzazione errore di registrazione}{11}{subsubsection.3.2.7}%
+\contentsline {subsubsection}{\numberline {3.2.8}UC2 - Login}{12}{subsubsection.3.2.8}%
+\contentsline {subsubsection}{\numberline {3.2.9}UC2.1 - Inserimento email utente}{12}{subsubsection.3.2.9}%
+\contentsline {subsubsection}{\numberline {3.2.10}UC2.2 - Inserimento password}{13}{subsubsection.3.2.10}%
+\contentsline {subsubsection}{\numberline {3.2.11}UC2.3 - Conferma login}{13}{subsubsection.3.2.11}%
+\contentsline {subsubsection}{\numberline {3.2.12}UC2.4 - Visualizzazione errore login}{13}{subsubsection.3.2.12}%
+\contentsline {subsubsection}{\numberline {3.2.13}UC3 - Logout}{13}{subsubsection.3.2.13}%
+\contentsline {subsubsection}{\numberline {3.2.14}UC4 - Visualizzazione elenco attività}{14}{subsubsection.3.2.14}%
+\contentsline {subsubsection}{\numberline {3.2.15}UC4.1 - Visualizzazione elemento dell'elenco attività}{15}{subsubsection.3.2.15}%
+\contentsline {subsubsection}{\numberline {3.2.16}UC4.1.1 - Visualizzazione nome del proponente dell’attività }{15}{subsubsection.3.2.16}%
+\contentsline {subsubsection}{\numberline {3.2.17}UC4.1.2 - Visualizzazione cognome del proponente dell’attività }{16}{subsubsection.3.2.17}%
+\contentsline {subsubsection}{\numberline {3.2.18}UC4.1.3 - Visualizzazione data dell’attività }{16}{subsubsection.3.2.18}%
+\contentsline {subsubsection}{\numberline {3.2.19}UC4.1.4 - Visualizzazione tipologia dell’attività }{16}{subsubsection.3.2.19}%
+\contentsline {subsubsection}{\numberline {3.2.20}UC5 - Visualizzazione dettaglio di un'attività}{17}{subsubsection.3.2.20}%
+\contentsline {subsubsection}{\numberline {3.2.21}UC5.1 - Visualizzazione nome del proponente dell’attività }{18}{subsubsection.3.2.21}%
+\contentsline {subsubsection}{\numberline {3.2.22}UC5.2 - Visualizzazione cognome del proponente dell’attività }{18}{subsubsection.3.2.22}%
+\contentsline {subsubsection}{\numberline {3.2.23}UC5.3 - Visualizzazione data dell’attività }{18}{subsubsection.3.2.23}%
+\contentsline {subsubsection}{\numberline {3.2.24}UC5.4- Visualizzazione tipologia dell’attività }{18}{subsubsection.3.2.24}%
+\contentsline {subsubsection}{\numberline {3.2.25}UC5.5 - Visualizzazione ora dell’attività }{19}{subsubsection.3.2.25}%
+\contentsline {subsubsection}{\numberline {3.2.26}UC5.6 - Visualizzazione foto dell’attività }{19}{subsubsection.3.2.26}%
+\contentsline {subsubsection}{\numberline {3.2.27}UC5.7 - Visualizzazione lunghezza dell’attività }{19}{subsubsection.3.2.27}%
+\contentsline {subsubsection}{\numberline {3.2.28}UC5.8 - Visualizzazione titolo dell’attività }{19}{subsubsection.3.2.28}%
+\contentsline {subsubsection}{\numberline {3.2.29}UC5.9 - Visualizzazione descrizione dell’attività }{20}{subsubsection.3.2.29}%
+\contentsline {subsubsection}{\numberline {3.2.30}UC5.10 - Visualizzazione numero partecipanti dell’attività }{20}{subsubsection.3.2.30}%
+\contentsline {subsubsection}{\numberline {3.2.31}UC5.11 - Visualizzazione luogo dell’attività }{20}{subsubsection.3.2.31}%
+\contentsline {subsubsection}{\numberline {3.2.32}UC5.12 - Visualizzazione tappe dell’attività }{20}{subsubsection.3.2.32}%
+\contentsline {subsubsection}{\numberline {3.2.33}UC6 - Visualizzazione elenco dello storico delle attività}{21}{subsubsection.3.2.33}%
+\contentsline {subsubsection}{\numberline {3.2.34}UC7 - Inserimento di un'attività}{22}{subsubsection.3.2.34}%
+\contentsline {subsubsection}{\numberline {3.2.35}UC7.1 - Inserimento data dell’attività }{23}{subsubsection.3.2.35}%
+\contentsline {subsubsection}{\numberline {3.2.36}UC7.2 - Inserimento tipologia dell’attività}{23}{subsubsection.3.2.36}%
+\contentsline {subsubsection}{\numberline {3.2.37}UC7.3 - Inserimento ora dell’attività }{23}{subsubsection.3.2.37}%
+\contentsline {subsubsection}{\numberline {3.2.38}UC7.4 - Inserimento lunghezza dell’attività}{23}{subsubsection.3.2.38}%
+\contentsline {subsubsection}{\numberline {3.2.39}UC7.5 - Inserimento titolo dell’attività }{24}{subsubsection.3.2.39}%
+\contentsline {subsubsection}{\numberline {3.2.40}UC7.6 - Inserimento descrizione dell’attività }{24}{subsubsection.3.2.40}%
+\contentsline {subsubsection}{\numberline {3.2.41}UC7.7 - Inserimento numero partecipanti all’attività}{24}{subsubsection.3.2.41}%
+\contentsline {subsubsection}{\numberline {3.2.42}UC7.8 - Inserimento luogo dell’attività }{24}{subsubsection.3.2.42}%
+\contentsline {subsubsection}{\numberline {3.2.43}UC7.9 - Inserimento tappe dell’attività}{25}{subsubsection.3.2.43}%
+\contentsline {subsubsection}{\numberline {3.2.44}UC7.10 - Conferma Inserimento dell'attività}{25}{subsubsection.3.2.44}%
+\contentsline {subsubsection}{\numberline {3.2.45}UC7.11 - Visualizzazione errore di inserimento di un'attività}{25}{subsubsection.3.2.45}%
+\contentsline {subsubsection}{\numberline {3.2.46}UC8 - Modifica di un'attività}{25}{subsubsection.3.2.46}%
+\contentsline {subsubsection}{\numberline {3.2.47}UC9 - Eliminazione di un'attività}{26}{subsubsection.3.2.47}%
+\contentsline {section}{\numberline {4}Requisiti}{27}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Requisiti funzionali}{27}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Requisiti qualitativi}{31}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Requisiti di vincolo}{32}{subsection.4.3}%

@@ -1,0 +1,79 @@
+\newcommand{\docNome}{ ANALISI DEI REQUISITI }
+\newcommand{\docNomeProgetto}{ SportWill }
+\newcommand{\docVersione}{1.0.0}
+\newcommand{\docStatus}{Approvato}
+\newcommand{\docUso}{Esterno}
+\newcommand{\docDescrizione}{
+    Il documento contiene l'elenco e la descrizione dettagliata dei casi d’uso ed i requisiti necessari per lo sviluppo del progetto SportWill.
+}
+
+\newcommand{\docDestinatari}{
+	Sync Lab S.p.A\\&
+	Vittorio Schiavon
+}
+\newcommand{\docRedattori}{
+    Vittorio Schiavon
+}
+\newcommand{\docVerificatori}{
+	Sync Lab S.p.A \\&
+	Vittorio Schiavon
+}
+\newcommand{\docApprovazione}{
+	Sync Lab S.p.A\\&
+	Vittorio Schiavon
+}
+
+% ----- NON MODIFICARE SOTTO QUESTA RIGA -----
+
+% ---------------------------
+% Configurazioni
+% ---------------------------
+
+\documentclass[11pt,a4paper,table]{article}
+
+\input{res/config}    
+
+% ---------------------------
+% Dati frontespizio
+% ---------------------------
+
+\title{\hr \huge \textsc{\docNome} \\ 
+        \vspace{11pt} \large \textsc{\docNomeProgetto} \hr}
+
+\author{} % Non toccare
+\date{} % Non toccare
+
+% ---------------------------
+% Composizione del documento
+% ---------------------------
+
+\begin{document} 
+\mdseries
+% Frontespizio
+
+\pagenumbering{gobble}
+\DeactivateBG
+\include{res/first_page}
+
+% Registro delle modifiche
+
+\newpage
+\pagenumbering{arabic}
+\include{res/register}
+
+% Tabella dei contenuti
+
+\newpage
+\tableofcontents
+\listoffigures
+\listoftables
+
+% Sezioni
+
+\newpage
+\input{res/sections}
+
+\end{document}
+
+
+% EOF

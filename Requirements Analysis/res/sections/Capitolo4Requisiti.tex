@@ -1,0 +1,114 @@
+\section{Requisiti}
+
+Questa sezione contiene l'elenco di tutti i requisiti individuati per il progetto SportWill. Essi sono tratti dai casi d’uso, dal dialogo con Sync Lab S.p.A e da necessità interne. Verranno separati in tabelle a seconda del loro tipo. Di ogni requisito verranno indicati: tipologia, priorità e fonti. I requisiti sono classificati per tipo e importanza e viene utilizzata la seguente sintassi:
+\begin{center}
+\textbf{R<Importanza><Tipo><Codice>}    
+\end{center}
+\begin{itemize}
+    \item \textbf{Importanza} : può assumere solo uno fra i seguenti valori:
+    \begin{itemize}
+        \item \textbf{0:} requisito obbligatorio;
+        \item \textbf{1:} requisito desiderabile;
+        \item \textbf{2:} requisito opzionale.
+    \end{itemize}
+    \item \textbf{Tipo}: può assumere solo uno fra i seguenti valori:
+    \begin{itemize}
+        \item \textbf{F:} funzionale;
+        \item \textbf{Q:} di qualità;
+        \item \textbf{V:} vincolo.
+    \end{itemize}
+    \item \textbf{Codice}: è il codice gerarchico univoco di ogni vincolo espresso in numeri;
+    \item \textbf{Descrizione}: breve ma completa ed il meno ambigua possibile;
+    \item \textbf{Fonte}: può essere soltanto una o più tra le seguenti:
+    \begin{itemize}
+        \item \textbf{Interno:} gli analisti hanno ritenuto giusto aggiungere questo requisito;
+        \item \textbf{Caso d’uso:} il requisito è stato estrapolato da un caso d’uso. In questo caso va indicato il codice univoco del caso d’uso. È possibile indicare come fonte più di un caso d’uso.
+    \end{itemize}
+
+\end{itemize}
+\subsection{Requisiti funzionali}
+\begin{center}
+\begin{longtable}{|p{3cm}|p{8cm}|p{3cm}|}
+\hline
+\rowcolor{lighter-grayer}
+\textbf{Requisito} & \textbf{Descrizione}  & \textbf{Fonti} \\ \hline
+ R0F4 & Un utente può creare un account. &  UC1 \\ \hline
+ R0F4.1 & Creare un account richiede il nome dell'utente.  UC1.1 \\ \hline
+ R0F4.1 & Creare un account richiede il cognome dell'utente.  UC1.2 \\ \hline
+ R0F4.2 & Creare un account richiede un’email. & UC1.3 \\ \hline
+ R0F4.3 & Creare un account richiede una password. & UC1.4 \\ \hline
+ R0F4.3 & La password deve essere oscurata. & UC1.4 \\ \hline
+ R0F4.4 & L’utente deve dare una conferma una volta inserite tutte le informazioni per la creazione dell’account.& UC1.5 \\ \hline
+ R0F4.5 & Se ci sono stati errori nell’inserimento dei dati il sistema blocca l’operazione di registrazione. &UC1.6 \\ \hline
+
+
+ R0F5 & L’utente può fare il login. & UC2 \\ \hline
+ R0F5.1 & Il login richiede l'email dell'utente. & UC2.1 \\ \hline
+ R0F5.2 & Il login richiede la password. &  UC2.2 \\ \hline
+ R0F5.3 & L’utente deve dare una conferma per il login. & UC2.3  \\ \hline
+ R0F5.4 & Se ci sono stati errori nell’inserimento dei dati il sistema blocca l’operazione di login. & UC2.4 \\ \hline
+ R0F6 & L’utente può effettuare il logout. & UC3 \\ \hline
+R0F6 & L’utente può visualizzare l'elenco delle attività pubblicate dagli utenti del sistema. & UC4 \\ \hline
+R0F6 & L’utente può visualizzare un elemento dell'elenco delle attività pubblicate dagli utenti del sistema. & UC4.1 \\ \hline
+R0F6 & L’utente può visualizzare il nome del proponente di un elemento dell'elenco delle attività pubblicate dagli utenti del sistema. & UC4.1.1 \\ \hline
+R0F6 & L’utente può visualizzare il cognome del proponente di un elemento dell'elenco delle attività pubblicate dagli utenti del sistema. & UC4.1.2 \\ \hline
+R0F6 & L’utente può visualizzare la data di un elemento dell'elenco delle attività pubblicate dagli utenti del sistema. & UC4.1.3 \\ \hline
+R0F6 & L’utente può visualizzare la tipologia di un elemento dell'elenco delle attività pubblicate dagli utenti del sistema. & UC4.1.4 \\ \hline
+R0F6 & L’utente può visualizzare i dettagli di un'attività presente nel sistema. & UC5 \\ \hline
+R0F6 & L’utente può visualizzare il nome di un'attività presente nel sistema. & UC5.1 \\ \hline
+R0F6 & L’utente può visualizzare il cognome di un'attività presente nel sistema. & UC5.2 \\ \hline
+R0F6 & L’utente può visualizzare la data di un'attività presente nel sistema. & UC5.3 \\ \hline
+R0F6 & L’utente può visualizzare la tipologia di un'attività presente nel sistema. & UC5.4 \\ \hline
+R0F6 & L’utente può visualizzare l'ora di un'attività presente nel sistema. & UC5.5 \\ \hline
+R0F6 & L’utente può visualizzare la foto di un'attività presente nel sistema. & UC5.6 \\ \hline
+R0F6 & L’utente può visualizzare la lunghezza di un'attività presente nel sistema. & UC5.7 \\ \hline
+R0F6 & L’utente può visualizzare il titolo di un'attività presente nel sistema. & UC5.8 \\ \hline
+R0F6 & L’utente può visualizzare la descrizione di un'attività presente nel sistema. & UC5.9 \\ \hline
+R0F6 & L’utente può visualizzare il numero dei partecipanti ad un'attività presente nel sistema. & UC5.10 \\ \hline
+R0F6 & L’utente può visualizzare il luogo di un'attività presente nel sistema. & UC5.11 \\ \hline
+R0F6 & L’utente può visualizzare le tappe di un'attività presente nel sistema. & UC5.12 \\ \hline
+
+R0F6 & L’utente può visualizzare l'elenco dello storico delle attività da lui pubblicate. & UC6 \\ \hline
+
+R0F6 & L’utente può inserire una nuova attività . & UC7 \\ \hline
+R0F6 & L’utente per creare una nuova attività deve inserire la data. & UC7.1 \\ \hline
+R0F6 & L’utente per creare una nuova attività deve inserire la tipologia. & UC7.2 \\ \hline
+R0F6 & L’utente per creare una nuova attività deve inserire l'ora. & UC7.3 \\ \hline
+R0F6 & L’utente per creare una nuova attività deve inserire la lunghezza. & UC7.4 \\ \hline
+R0F6 & L’utente per creare una nuova attività deve inserire il titolo. & UC7.5 \\ \hline
+R0F6 & L’utente per creare una nuova attività deve inserire la descrizione. & UC7.6 \\ \hline
+R0F6 & L’utente per creare una nuova attività deve inserire il numero dei partecipanti. & UC7.7 \\ \hline
+R0F6 & L’utente per creare una nuova attività deve inserire il luogo. & UC7.8 \\ \hline
+R0F6 & L’utente per creare una nuova attività deve inserire le tappe. & UC7.9 \\ \hline
+R0F6 & L’utente per creare una nuova attività deve confermare i dati inseriti. & UC7.10 \\ \hline
+
+R0F6 & L’utente può modificare i dati di una propria attività. & UC8 \\ \hline
+R0F6 & L’utente può eliminare una propria attività. & UC9 \\ \hline
+\caption{Elenco requisiti funzionali}
+\end{longtable}
+\end{center}
+\newpage
+\subsection{Requisiti qualitativi}
+\begin{center}
+\begin{longtable}{|p{3cm}|p{8cm}|p{3cm}|}
+\hline
+\rowcolor{lighter-grayer}
+\textbf{Requisito}&\textbf{Descrizione}&\textbf{Fonti}\\ \hline
+
+\caption{Elenco requisiti qualitativi}
+\end{longtable}
+\end{center}
+\newpage
+\subsection{Requisiti di vincolo}
+\begin{center}
+\begin{longtable}{|p{3cm}|p{8cm}|p{3cm}|}
+\hline
+\rowcolor{lighter-grayer}
+\textbf{Requisito}&\textbf{Descrizione}&\textbf{Fonti}\\ 
+\hline
+R0V1 & Il front-end di SportWill deve essere reato usando Angular e React.& Interno\\
+\hline
+
+\caption{Elenco requisiti di vincolo}
+\end{longtable}
+\end{center}
