@@ -1,0 +1,23 @@
+<div class="element">
+  <label for="{{contentName}}">{{contentName}}</label>
+  <input type="text" name="{{contentName}}" required [(ngModel)]="content"
+  class="form-control"  #Formname="ngModel" id="input"
+  [class.notActive]="!editable" (ngModelChange)="onModelChange($event)" *ngIf="!(contentName=='Sport')">
+
+
+  <select name="{{contentName}}" id="input" class="form-control"
+    *ngIf="contentName=='Sport'" [(ngModel)]="content"
+    (ngModelChange)="onModelChange($event)"
+    [class.notActive]="!editable" >
+    <option *ngFor="let sport of sports" [value]="sport">{{sport}}</option>
+  </select>
+
+
+<!--
+    <div [hidden]="Formname.valid || Formname.pristine" *ngIf="!(contentName=='Sport')"
+      class="alert">
+      Please insert a {{contentName}}.
+  </div>
+-->
+
+</div>

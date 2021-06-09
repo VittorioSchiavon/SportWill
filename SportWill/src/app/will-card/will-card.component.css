@@ -1,0 +1,50 @@
+#willCard{
+  display: flex;
+  margin:1em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  width: 15em;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#willCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+}
+#willCard p{
+  font-size: 1.5em;
+  color:rgb(80, 80, 80);
+  text-align: center;
+}
+
+#nameContainer{
+  text-align: center;
+}
+
+img{
+  width:100%;
+  height: 50%;
+  position: relative;
+  top:0;
+  left:0;
+  background-color: var(--main-text-color);
+
+}
+
+
+.text{
+  margin:1em;
+  color:var(--main-text-color);
+}
+
+#creator{
+  font-weight: bold;
+  color: var(--main-text-color);
+
+}

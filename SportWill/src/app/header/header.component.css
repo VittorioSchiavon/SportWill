@@ -1,0 +1,35 @@
+.topnav{
+  background-color: var(--main-bg-color);
+  overflow: hidden;
+  box-shadow: 0px 0px 5px 0px #292929;
+  user-select: none;
+}
+
+.topnav .container{
+  float: right;
+  display: block;
+  margin-left: 15px;
+}
+
+a{
+  float: left;
+  display: block;
+  color: var(--main-text-color);
+  text-align: center;
+  padding: 2em 2em;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight:bold;
+}
+
+a:hover{
+  background-color: var(--main-bg-color-hover);
+}
+
+#logo{
+  display: block;
+  height: 3em;
+  float: left;
+  margin: 1em;
+
+}

@@ -1,0 +1,72 @@
+<div>
+  <form #willForm="ngForm">
+    <div class="container">
+      <h1>Will Detail</h1>
+      <img [src]="imgSrc" alt="activity image">
+      <div class="elementContainer">
+
+        <app-form-element [(content)]="will.creator"
+        [contentName]="'Name'"
+        [editable]="false"></app-form-element>
+
+        <app-form-element [(content)]="will.title"
+        [contentName]="'Title'"
+        [editable]="editable"></app-form-element>
+
+        <app-form-element [(content)]="will.sport"
+        [contentName]="'Sport'"
+        [editable]="editable"></app-form-element>
+
+        <app-form-element [(content)]="will.date"
+        [contentName]="'Date'"
+        [editable]="editable"></app-form-element>
+
+        <app-form-element [(content)]="will.time"
+        [contentName]="'Time'"
+        [editable]="editable"></app-form-element>
+
+        <app-form-element [(content)]="will.lenght"
+        [contentName]="'Lenght'"
+        [editable]="editable"></app-form-element>
+
+        <app-form-element [(content)]="will.place"
+        [contentName]="'Place'"
+        [editable]="editable"></app-form-element>
+
+
+        <app-form-element [(content)]="will.stages"
+        [contentName]="'Stages'"
+        [editable]="editable"></app-form-element>
+
+        <app-form-element [(content)]="will.nPartecipants"
+        [contentName]="'Number of Partecipants'"
+        [editable]="editable"></app-form-element>
+
+        <app-form-element [(content)]="will.description"
+        [contentName]="'Description'"
+        [editable]="editable"></app-form-element>
+
+        <!--
+        <div class="element">
+          <label for="lenght">Lenght</label>
+          <input type="text" name="lenght" required [(ngModel)]="will.lenght"
+          class="form-control"  #lenght="ngModel"
+          [class.notActive]="!editable">
+          <div [hidden]="lenght.valid || lenght.pristine"
+              class="alert">
+              Please insert a Lenght.
+          </div>
+        </div>
+        [disabled]="!willForm.form.valid || !willForm.dirty"
+        -->
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="cancelbtn" routerLink="/homepage">Go Back</button>
+        <button  *ngIf="editable"
+        routerLink="/homepage"
+        (click)="submitChanges()">Save Changes</button>
+      </div>
+    </div>
+  </form><br>
+</div>

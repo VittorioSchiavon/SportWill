@@ -1,0 +1,15 @@
+<div id="container">
+  <h1>Home Page</h1>
+  <label class="switch">
+    <input (click)="checked()" type="checkbox" >
+    <p>Find only my activities</p>
+  </label>
+  <div id="cardContainer">
+    <div *ngFor ="let card of cards" >
+      <app-will-card [will]="card" *ngIf="card.creator===username || checkedValue"></app-will-card>
+    </div>
+  </div>
+
+  <button id="addWill" routerLink="/add">+</button>
+</div>
+

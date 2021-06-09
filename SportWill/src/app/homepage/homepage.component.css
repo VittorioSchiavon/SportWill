@@ -1,0 +1,49 @@
+#cardContainer{
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+#container{
+  padding-top: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+}
+
+h1{
+  color:rgb(25, 102, 175);
+}
+
+.switch{
+  display: flex;
+  align-items: center;
+  margin:10px;
+}
+.switch input{
+  margin:10px;
+  width: 1.8em;
+  height: 1.8em;
+  transition: 0.3s;
+}
+.switch input:hover{
+  width: 2em;
+  height: 2em;
+}
+
+#addWill{
+  border-radius: 50%;
+  position:fixed;
+  margin:15px;
+  bottom:0px;
+  right:0px;
+  width:4em;
+  height: 4em;
+  background-color:var(--main-text-color);
+  color:white;
+  font-size: 1.2em;
+  font-weight: bolder;
+  border:1px solid white;
+  z-index: 2;
+}

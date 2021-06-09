@@ -1,0 +1,47 @@
+
+<form (ngSubmit)="onSubmit()" #signUpForm="ngForm">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+
+    <label for="name"><b>Name*</b></label>
+    <input type="text" placeholder="Enter Name" name="name" required [(ngModel)]="model.name"
+    class="form-control"  #name="ngModel">
+    <div [hidden]="name.valid || name.pristine"
+        class="alert">
+        Please insert a name.
+    </div>
+    <label for="surname"><b>Surname*</b></label>
+    <input type="text" placeholder="Enter Surname" name="surname" required [(ngModel)]="model.surname"
+    class="form-control"  #surname="ngModel">
+    <div [hidden]="surname.valid || surname.pristine"
+        class="alert">
+        Please insert a surname.
+    </div>
+    <label for="email"><b>Email*</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]="model.email"
+    class="form-control"  #email="ngModel">
+    <div [hidden]="email.valid || email.pristine"
+        class="alert">
+        Please insert an Email.
+    </div>
+    <label for="password"><b>Password*</b></label>
+    <input type="password" placeholder="Enter Password" id="password" name="password" required
+    [(ngModel)]="model.password" #password="ngModel"
+    class="form-control">
+    <div [hidden]="password.valid || password.pristine"
+        class="alert">
+        Please insert the password.
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="cancelbtn" routerLink="/homepage">Cancel</button>
+      <button [disabled]="!signUpForm.form.valid" type="submit" class="signinbtn"
+      routerLink="/homepage" (click)="signUp()">Sign Up</button>
+    </div>
+    <div id="links">
+      <a routerLink="/signIn">Sign In</a>
+    </div>
+  </div>
+</form>
+

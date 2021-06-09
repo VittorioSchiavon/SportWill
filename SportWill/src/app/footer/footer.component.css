@@ -1,0 +1,20 @@
+footer{
+  padding: 5em;
+  font-size: 0.8em;
+  width: 100%;
+  background-color: var(--main-text-color);
+  margin-top: 2em;
+  color:rgb(179, 177, 177);
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  flex-wrap: wrap;
+}
+
+p{
+  margin:10px;
+  text-align: center;
+  float:left;
+}
