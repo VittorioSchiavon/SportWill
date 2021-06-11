@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { Will } from '../will';
+import { sports } from '../sports';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-will-card',
@@ -10,26 +12,36 @@ import { Will } from '../will';
 export class WillCardComponent implements OnInit {
 
 
-  @Input() will : Will=    {
-    creatorId: "",
-    date: new Date(),
-    description: "",
-    lenght: 0,
-    place: "",
-    nPartecipants: 9,
-    time: "",
-    creator: "",
-    sport: "",
-    stages: "",
-    title: "",
-  };
-
+  @Input()   will : any/*=
+  {
+    "proprietario": "",
+    "titolo": "",
+    "descrizione":"",
+    "luogo": "",
+    "lunghezza": 0,
+    "tappe": "",
+    "data": "",
+    "ora": "",
+    "sport": "",
+    "numpart" : "",
+    "nomeproprietario":"",
+  };*/
   imgSrc?:string
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.imgSrc=`../../assets/SportImages/${this.will.sport}.jpeg`
+
+    if (sports.includes(this.will.sport)){
+      this.imgSrc=`../../assets/SportImages/${this.will.sport}.jpeg`;
+    }else{
+      this.imgSrc=`../../assets/SportImages/other.jpg`;
+    }
+
   }
 
+
+  navigate(){
+    this.router.navigate([`/detail/${ encodeURIComponent(JSON.stringify(this.will))}`]);
+  }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Will } from '../will';
 import { FormsModule } from '@angular/forms';
 import { WillDataService } from '../will-data.service';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-homepage',
@@ -10,14 +11,25 @@ import { WillDataService } from '../will-data.service';
 })
 export class HomepageComponent implements OnInit {
 
-  cards?:Will[];
-  username="Vittorio Schiavon";
+  cards?:any;
+  username=localStorage.getItem("userId");
   checkedValue:Boolean=true;
 
-  constructor(public willdata: WillDataService) { }
+  constructor(public willdata: WillDataService,
+    public auth: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.cards=this.willdata.getWillData();
+    console.log("hi");
+    this.getData();
+  }
+
+  getData(){
+    this.willdata.getWillData().subscribe(
+      res=>{
+        console.log(res);
+        this.cards=res;
+      }
+    );
   }
 
   checked(){

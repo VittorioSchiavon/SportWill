@@ -1,11 +1,24 @@
 <div class="element">
-  <label for="{{contentName}}">{{contentName}}</label>
-  <input type="text" name="{{contentName}}" required [(ngModel)]="content"
-  class="form-control"  #Formname="ngModel" id="input"
-  [class.notActive]="!editable" (ngModelChange)="onModelChange($event)" *ngIf="!(contentName=='Sport')">
+  <div id="label">{{contentName}}</div>
+  <div [class.tooltip]="contentName==='Sport' && editable">
+    <div [attr.contenteditable]="editable" class="input"
+    [class.editable]="editable"
+    (input)="onModelChange($event)">{{staticContent}}</div>
+    <div  class="tooltiptext"  contenteditable="false">
+      <div>We suggest using one of this sports:</div>
+      <div *ngFor="let sport of sports">{{sport}}</div>
+  </div>
+  </div>
 
 
-  <select name="{{contentName}}" id="input" class="form-control"
+
+
+<!--
+  <input type="text" *ngIf="editable && !(contentName=='Sport')" name="{{contentName}}" required [(ngModel)]="content"
+  class="form-control"  #Formname="ngModel" class="input"
+  [class.notActive]="!editable" (ngModelChange)="onModelChange($event)" >
+
+  <select name="{{contentName}}" class="input" class="form-control"
     *ngIf="contentName=='Sport'" [(ngModel)]="content"
     (ngModelChange)="onModelChange($event)"
     [class.notActive]="!editable" >
@@ -13,7 +26,7 @@
   </select>
 
 
-<!--
+
     <div [hidden]="Formname.valid || Formname.pristine" *ngIf="!(contentName=='Sport')"
       class="alert">
       Please insert a {{contentName}}.

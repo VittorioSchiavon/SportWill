@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,20 +8,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
   model={
-    name:"",
-    surname:"",
+    nome:"",
+    cognome:"",
     email:"",
     password:""
   }
-  constructor() { }
+
+  message: string="";
+
+  constructor(private auth: AuthenticationService) { }
 
   ngOnInit(): void {
   }
 
   signUp(){
-    alert("Congratulation, you have created an account!");
-  }
+    this.auth.registerUser(this.model)
+    .subscribe(
+      res=>{
+        console.log(res);
+        localStorage.setItem('userId',JSON.parse(atob(res.token.split('.')[1])).sub);
+        this.message="You Are Now Logged In.";
+        localStorage.setItem('token',res.token);
+        //this.getUserData();
 
-  onSubmit(){}
+      },
+      err=>{
+        this.message="Error, try again.";
+      }
+    );
+    }
+
+
+getUserData(){
+this.auth.getUserData(this.model.email).subscribe(
+  res=>{
+    console.log(res);
+    localStorage.setItem("userData", JSON.stringify(res));
+  }
+);
+}
+
 
 }

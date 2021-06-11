@@ -16,18 +16,18 @@
   align-items: center;
 }
 
-.element label{
+#label{
   display:block;
   padding:0.3em;
   margin: auto;
   text-align: center;
   font-weight: bold;
-  color:white;
+  color:var(--secondary-text-color);
   border-radius: 5px;
-  background-color: rgb(25, 102, 175);
+  background-color: var(--main-text-color);
 }
 
-.element #input{
+.element .input{
   overflow: auto;
   resize: none;
   text-align: center;
@@ -51,4 +51,26 @@
   pointer-events:none;
   background-color: transparent;
   appearance:none;
+}
+
+
+.editable {
+  border-bottom: 2px dotted var(--main-bg-color-hover);
+}
+
+ .tooltiptext {
+  visibility: hidden;
+  background-color: var(--main-bg-color-hover);
+
+  text-align: center;
+  border-radius: 6px;
+  padding: 1em;
+  font-size: 0.8em;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

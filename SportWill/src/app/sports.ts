@@ -7,7 +7,8 @@ export var sports=[
 "Running",
 "Volleyball",
 "Swimming",
-"Boxing"
+"Boxing",
+"Rugby"
 ];
 
 

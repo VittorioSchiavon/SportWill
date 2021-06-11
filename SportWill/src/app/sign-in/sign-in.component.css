@@ -5,8 +5,8 @@ form{
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: rgb(245, 245, 245);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: var(--main-bg-color-hover);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
   transition: 0.3s;
 }
 form:hover{
@@ -14,7 +14,7 @@ form:hover{
 }
 
 h1{
-  color:rgb(25, 102, 175);
+  color:var(--main-text-color);
   margin-bottom:10px;
 }
 p, label{

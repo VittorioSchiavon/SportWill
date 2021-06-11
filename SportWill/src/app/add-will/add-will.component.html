@@ -2,10 +2,10 @@
   <form #willForm="ngForm">
     <div class="container">
       <h1>Will Detail</h1>
-      <img src='../../assets/images/logo.png' alt="activity image">
+      <img src='../../assets/Images/logo.png' alt="activity image">
       <div class="elementContainer">
 
-        <app-form-element [(content)]="will.title"
+        <app-form-element [(content)]="will.titolo"
         [contentName]="'Title'"
         [editable]="true"></app-form-element>
 
@@ -13,31 +13,31 @@
         [contentName]="'Sport'"
         [editable]="true"></app-form-element>
 
-        <app-form-element [(content)]="will.date"
+        <app-form-element [(content)]="will.data"
         [contentName]="'Date'"
         [editable]="true"></app-form-element>
 
-        <app-form-element [(content)]="will.time"
+        <app-form-element [(content)]="will.ora"
         [contentName]="'Time'"
         [editable]="true"></app-form-element>
 
-        <app-form-element [(content)]="will.lenght"
+        <app-form-element [(content)]="will.lunghezza"
         [contentName]="'Lenght'"
         [editable]="true"></app-form-element>
 
-        <app-form-element [(content)]="will.place"
+        <app-form-element [(content)]="will.luogo"
         [contentName]="'Place'"
         [editable]="true"></app-form-element>
 
-        <app-form-element [(content)]="will.stages"
+        <app-form-element [(content)]="will.tappe"
         [contentName]="'Stages'"
         [editable]="true"></app-form-element>
 
-        <app-form-element [(content)]="will.nPartecipants"
+        <app-form-element [(content)]="will.numpart"
         [contentName]="'Number of Partecipants'"
         [editable]="true"></app-form-element>
 
-        <app-form-element [(content)]="will.description"
+        <app-form-element [(content)]="will.descrizione"
         [contentName]="'Description'"
         [editable]="true"></app-form-element>
 
@@ -58,9 +58,10 @@
 
       <div class="buttons">
         <button type="button" class="cancelbtn" routerLink="/homepage">Cancel</button>
-        <button routerLink="/homepage"
-        (click)="submitChanges()">Create Will</button>
+        <button
+        (click)="createWill()">Create Will</button>
       </div>
     </div>
   </form><br>
 </div>
+<app-message [message]="message" *ngIf="message!==''"></app-message>

@@ -17,13 +17,16 @@ export class FormElementComponent implements OnInit {
   @Output() contentChange =new EventEmitter<any>();
 
   sports?:string[];
+  staticContent?:any;
 
-  onModelChange(value: string) {
-    this.contentChange.emit(value);
+  onModelChange(value: any) {
+    console.log(value.target.innerHTML);
+    this.contentChange.emit(value.target.innerHTML);
   }
   constructor() { }
 
   ngOnInit(): void {
     this.sports=sports;
+    this.staticContent=this.content;
   }
 }

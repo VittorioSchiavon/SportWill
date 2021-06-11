@@ -1,12 +1,13 @@
 
-<div id="willCard" routerLink="/detail/{{will |json }}">
+<div id="willCard" (click)="navigate()">
   <div id="nameContainer">
     <img [src]="imgSrc" alt="activity image">
     <div class="text">
-      <p id='creator'>{{will.creator}} </p>
-      <p id='date'>{{will.date | date}}</p>
-      <p id='lenght'>{{will.lenght}} km</p>
+      <p id='creator'>{{will.nomeproprietario}}</p>
+      <p id='date'>{{will.data}}</p>
+      <p id='lenght'>{{will.lunghezza}} km</p>
     </div>
+
 
   </div>
 </div>

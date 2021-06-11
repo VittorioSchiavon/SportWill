@@ -13,7 +13,7 @@
 }
 
 h1{
-  color:rgb(25, 102, 175);
+  color:var(--main-text-color);
 }
 
 .switch{
@@ -27,10 +27,7 @@ h1{
   height: 1.8em;
   transition: 0.3s;
 }
-.switch input:hover{
-  width: 2em;
-  height: 2em;
-}
+
 
 #addWill{
   border-radius: 50%;
@@ -41,9 +38,13 @@ h1{
   width:4em;
   height: 4em;
   background-color:var(--main-text-color);
-  color:white;
+  transition: 0.5s;
   font-size: 1.2em;
   font-weight: bolder;
-  border:1px solid white;
+  border:1px solid var(--main-bg-color);
   z-index: 2;
+}
+
+#addWill:hover{
+  font-size: 1.5em;
 }

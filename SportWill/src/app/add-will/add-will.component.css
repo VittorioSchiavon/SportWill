@@ -14,8 +14,8 @@ form{
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: rgb(245, 245, 245);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: var(--main-bg-color);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
   transition: 0.3s;
 }
 form:hover{
@@ -67,4 +67,7 @@ button:disabled{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.cancelbtn {
+  background-color: #f44336;
 }

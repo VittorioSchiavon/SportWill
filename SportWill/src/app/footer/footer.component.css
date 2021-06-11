@@ -2,9 +2,9 @@ footer{
   padding: 5em;
   font-size: 0.8em;
   width: 100%;
-  background-color: var(--main-text-color);
+  background-color: var(--main-bg-color);
   margin-top: 2em;
-  color:rgb(179, 177, 177);
+  color:var(--secondary-text-color);
   display: flex;
   justify-content: space-evenly;
   position: relative;

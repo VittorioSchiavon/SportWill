@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,13 @@ export class HeaderComponent implements OnInit {
 
   active:Boolean=false;
 
-  constructor() { }
+  isLogged:Boolean=false;
+  message: string="";
+
+  constructor(public auth: AuthenticationService) { }
 
   ngOnInit(): void {
+    this.isLogged=this.auth.isAuthenticated();
   }
 
   toggleNavBar(){
@@ -22,4 +27,12 @@ export class HeaderComponent implements OnInit {
     this.active=!this.active;
   }
 
+  logout(){
+    this.auth.logout();
+    this.isLogged=false;
+    this.message="You Are Now Logged Out.";
+}
+
+  login(){
+  }
 }

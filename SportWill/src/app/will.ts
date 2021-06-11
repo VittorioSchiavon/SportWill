@@ -1,13 +1,14 @@
 export interface Will {
-  creatorId: string;
-  date: Date;
-  description: string;
-  lenght: number;
-  place: string;
-  nPartecipants: number;
-  time: string;
-  creator: string;
-  sport: string;
-  stages: string;
-  title: string;
+  "proprietario": string;
+  "titolo": string;
+  "descrizione": string;
+  "luogo": string;
+  "lunghezza": number;
+  "tappe": string;
+  "data": string;
+  "ora": string;
+  "sport": string;
+  "numpart" : string;
+  "nomeproprietario": string;
 }
+

@@ -6,9 +6,14 @@
 }
 
 :root{
-  --main-bg-color: rgb(255, 255, 255);
-  --main-bg-color-hover: rgb(225, 225, 226);
-  --main-text-color: rgb(25, 102, 175);
+  --main-bg-color: rgb(48, 48, 48);
+  --main-bg-color-hover:rgb(36, 36, 36);
+  --main-text-color: rgb(89, 166, 238);
+  --secondary-text-color: rgb(226, 226, 226);
+}
+
+body{
+  background-color: var(--main-bg-color-hover);
 }
 
 /* Scrollbar */
@@ -26,3 +31,10 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+
+
+h1,h2,p,label,div, button, a{
+  color:var(--secondary-text-color);
+}
+
