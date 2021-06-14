@@ -55,7 +55,10 @@
 
 
 .editable {
-  border-bottom: 2px dotted var(--main-bg-color-hover);
+  border-bottom: 2px dotted var(--main-text-color);
+  background-color: var(--main-bg-color-hover);
+  min-width: 5em;
+  border-radius: 5px;
 }
 
  .tooltiptext {

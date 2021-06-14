@@ -12,15 +12,15 @@ import { AuthenticationService } from '../authentication.service';
 export class HomepageComponent implements OnInit {
 
   cards?:any;
-  username=localStorage.getItem("userId");
+  username:string | null="";
   checkedValue:Boolean=true;
 
   constructor(public willdata: WillDataService,
     public auth: AuthenticationService) { }
 
   ngOnInit(): void {
-    console.log("hi");
     this.getData();
+    if(this.auth.isAuthenticated()) this.username=(JSON.parse(localStorage.getItem("userData")+"")).email;
   }
 
   getData(){
@@ -32,9 +32,9 @@ export class HomepageComponent implements OnInit {
     );
   }
 
+
   checked(){
     this.checkedValue=!this.checkedValue;
-    console.log(this.checkedValue);
   }
 
 }

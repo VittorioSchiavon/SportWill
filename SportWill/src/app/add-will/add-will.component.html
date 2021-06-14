@@ -1,7 +1,7 @@
 <div>
   <form #willForm="ngForm">
     <div class="container">
-      <h1>Will Detail</h1>
+      <h1>Add Will</h1>
       <img src='../../assets/Images/logo.png' alt="activity image">
       <div class="elementContainer">
 
@@ -41,19 +41,6 @@
         [contentName]="'Description'"
         [editable]="true"></app-form-element>
 
-        <!--
-        <div class="element">
-          <label for="lenght">Lenght</label>
-          <input type="text" name="lenght" required [(ngModel)]="will.lenght"
-          class="form-control"  #lenght="ngModel"
-          [class.notActive]="!editable">
-          <div [hidden]="lenght.valid || lenght.pristine"
-              class="alert">
-              Please insert a Lenght.
-          </div>
-        </div>
-        [disabled]="!willForm.form.valid || !willForm.dirty"
-        -->
       </div>
 
       <div class="buttons">

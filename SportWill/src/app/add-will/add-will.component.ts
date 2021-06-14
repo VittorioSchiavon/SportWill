@@ -3,13 +3,14 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Will } from '../will';
 import { WillDataService } from '../will-data.service';
+
 @Component({
   selector: 'app-add-will',
   templateUrl: './add-will.component.html',
   styleUrls: ['./add-will.component.css']
 })
 export class AddWillComponent implements OnInit {
-
+//creo una nuova will vuota
   will : Will={
     "proprietario": "",
     "titolo": "",
@@ -24,31 +25,22 @@ export class AddWillComponent implements OnInit {
     "nomeproprietario": ""
     };
 
-  creator="Vittorio Schiavon"; //getUserData()
-  message: string="";
+  creator=JSON.parse(localStorage.getItem("userData")+"");
+  message: string=""; //stringa da passare al popup gestito da messageComponent
 
 
   constructor(private route: ActivatedRoute,
     public willdata: WillDataService) {}
 
   ngOnInit() {
-    this.will.proprietario= localStorage.getItem("userId")+"";
-    this.will.nomeproprietario=this.creator;
-    this.will={
-      data: "12/12/2000",
-      descrizione: "corsetta con i ragazzi",
-      lunghezza: 3,
-      luogo: "Padova",
-      nomeproprietario: "Luca Sassa",
-      numpart: "3",
-      ora: "12:12",
-      proprietario: localStorage.getItem("userId")+"",
-      sport: "Running",
-      tappe: "-",
-      titolo: "Corsetta",
-    }
+    console.log(this.creator);
+
+    this.will.proprietario= this.creator.email ; //prendo dalla local storage i dati utente
+    this.will.nomeproprietario=this.creator.nome+ " "+ this.creator.cognome; //setto il nome corretto
   }
 
+  //funione invocata quando si conferma la creazione di una will. Invoca la funzione di WillDataComponent
+  //createWill che comunica con il BE
   createWill(){
     this.willdata.createWill(this.will).subscribe(
       res=>{

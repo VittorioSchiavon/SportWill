@@ -24,26 +24,13 @@ export class SignInComponent implements OnInit {
     .subscribe(
       res=> {
         console.log(res);
-        localStorage.setItem('userId',JSON.parse(atob(res.token.split('.')[1])).sub);
         this.message="You Are Now Logged In.";
-        localStorage.setItem('token',res.token);
-        //this.getUserData();
+        localStorage.setItem('userData',JSON.stringify(res));
       },
       err=>{
         this.message="Error, try again.";
       }
     );
     }
-
-
-  getUserData(){
-    this.auth.getUserData(this.model.email).subscribe(
-      res=>{
-        console.log(res);
-        localStorage.setItem("userData", JSON.stringify(res));
-      }
-    );
-  }
-
 
 }

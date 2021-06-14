@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  getDataUrl:'http://synchost.ns0.it:8080/uscite/',
+  sendDataUrl:"http://synchost.ns0.it:8080/uscite/inserisci",
+  deleteDataUrl:"http://synchost.ns0.it:8080/uscite/elimina/",
+  signInUrl:'http://synchost.ns0.it:8091/signin',
+  signUpUrl:'http://synchost.ns0.it:8091/signup',
+  userDataUrl:"http://synchost.ns0.it:8091/utenti/all",
 };
 
 /*

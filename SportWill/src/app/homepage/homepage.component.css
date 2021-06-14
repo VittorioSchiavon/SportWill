@@ -2,6 +2,7 @@
   justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 1em;
 }
 
 
@@ -47,4 +48,9 @@ h1{
 
 #addWill:hover{
   font-size: 1.5em;
+}
+
+
+.invisible{
+  display:none;
 }

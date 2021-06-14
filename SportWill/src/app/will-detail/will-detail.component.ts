@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Will } from '../will';
 import { sports } from '../sports';
 import { WillDataService } from '../will-data.service';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-will-detail',
@@ -12,7 +13,7 @@ import { WillDataService } from '../will-data.service';
 })
 export class WillDetailComponent implements OnInit {
 
-  will ?: any/*=
+  will ?: any=
     {
       "proprietario": "",
       "titolo": "",
@@ -25,27 +26,24 @@ export class WillDetailComponent implements OnInit {
       "sport": "",
       "numpart" : "",
       "nomeproprietario":"",
-    };*/
+    };
 
-  imgSrc: string= '../../assets/images/logo.png';
+  imgSrc: string= '../../assets/Images/logo.png';
   message: string="";
+  id?:string;
 
   editable:Boolean=false;
-  username=localStorage.getItem("userId");
+  username="";
 
   constructor(private route: ActivatedRoute,
-    public willdata: WillDataService) {}
+    public willdata: WillDataService,
+    public auth: AuthenticationService) {}
 
   ngOnInit() {
-    this.will=JSON.parse(decodeURIComponent(this.route.snapshot.paramMap.get("id")+""));
-    this.editable=(this.will.proprietario==this.username);
-
-    if (sports.includes(this.will.sport)){
-      this.imgSrc=`../../assets/SportImages/${this.will.sport}.jpeg`;
-    }else{
-      this.imgSrc=`../../assets/SportImages/other.jpg`;
-    }
-
+    if(this.auth.isAuthenticated()) this.username= JSON.parse(localStorage.getItem("userData")+"").email;
+    //this.will=JSON.parse(decodeURIComponent(this.route.snapshot.paramMap.get("id")+""));
+    this.id=decodeURIComponent(this.route.snapshot.paramMap.get("id")+"");
+    this.getWill();
   }
 
   submitChanges(){
@@ -70,6 +68,28 @@ export class WillDetailComponent implements OnInit {
         this.message="Error, try again.";
       }
     );
+    }
+
+  getWill(){
+    this.willdata.getSingleWill(this.id+"").subscribe(
+      res=>{
+      this.will=res;
+      console.log(res);
+      this.setImage();
+      this.editable=(this.will.proprietario==this.username);
+      },
+      err=>{
+        this.message="Error, try again.";
+      }
+    );
+    }
+
+    setImage(){
+      if (sports.includes(this.will.sport)){
+        this.imgSrc=`../../assets/SportImages/${this.will.sport}.jpeg`;
+      }else{
+        this.imgSrc=`../../assets/SportImages/other.jpg`;
+      }
     }
   changedValue(willS:any, event: any){
     willS=event.value;

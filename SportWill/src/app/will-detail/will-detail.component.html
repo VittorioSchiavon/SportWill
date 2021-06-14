@@ -1,6 +1,6 @@
 <div>
   <form #willForm="ngForm">
-    <div class="container">
+    <div class="container"  *ngIf="this.will.titolo!=''">
       <h1>Will Detail</h1>
       <img [src]="imgSrc" alt="activity image">
       <div class="elementContainer">

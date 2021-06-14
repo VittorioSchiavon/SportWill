@@ -42,6 +42,6 @@ export class WillCardComponent implements OnInit {
 
 
   navigate(){
-    this.router.navigate([`/detail/${ encodeURIComponent(JSON.stringify(this.will))}`]);
+    this.router.navigate([`/detail/${ encodeURIComponent(this.will.id)}`]);
   }
 }

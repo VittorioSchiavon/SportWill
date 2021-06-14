@@ -1,17 +1,13 @@
 <div id="container">
   <h1>Home Page</h1>
-  <label class="switch">
+  <div class="switch" *ngIf="this.auth.isAuthenticated()">
     <input (click)="checked()" type="checkbox" >
     <p>Find only my activities</p>
-  </label>
+  </div>
   <div id="cardContainer">
-    <div *ngFor ="let card of cards" >
-      <app-will-card  *ngIf="card.proprietario===username || checkedValue" [will]="card"></app-will-card>
-    </div>
+      <app-will-card  *ngFor ="let card of cards"  [class.invisible]="card.proprietario!==username && !checkedValue" [will]="card"></app-will-card>
   </div>
 
   <button id="addWill" routerLink="/add" *ngIf="this.auth.isAuthenticated()">+</button>
-
-
 </div>
 

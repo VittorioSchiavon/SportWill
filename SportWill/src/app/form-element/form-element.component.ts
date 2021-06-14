@@ -20,7 +20,7 @@ export class FormElementComponent implements OnInit {
   staticContent?:any;
 
   onModelChange(value: any) {
-    console.log(value.target.innerHTML);
+    //console.log(value.target.innerHTML);
     this.contentChange.emit(value.target.innerHTML);
   }
   constructor() { }

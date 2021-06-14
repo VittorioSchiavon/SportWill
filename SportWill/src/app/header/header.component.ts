@@ -28,9 +28,12 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(){
+
     this.auth.logout();
+    //window.location.reload();
     this.isLogged=false;
     this.message="You Are Now Logged Out.";
+
 }
 
   login(){

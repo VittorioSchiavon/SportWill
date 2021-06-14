@@ -8,7 +8,7 @@
 :root{
   --main-bg-color: rgb(48, 48, 48);
   --main-bg-color-hover:rgb(36, 36, 36);
-  --main-text-color: rgb(89, 166, 238);
+  --main-text-color: #59a6ee;
   --secondary-text-color: rgb(226, 226, 226);
 }
 

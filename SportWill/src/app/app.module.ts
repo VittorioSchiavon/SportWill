@@ -16,6 +16,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormElementComponent } from './form-element/form-element.component';
 import { MessageComponent } from './message/message.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -32,6 +33,7 @@ import { MessageComponent } from './message/message.component';
     SignUpComponent,
     FormElementComponent,
     MessageComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
