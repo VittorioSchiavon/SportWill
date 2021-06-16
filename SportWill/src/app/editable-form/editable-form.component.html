@@ -36,7 +36,7 @@
         <input type="date" class="form-control" id="date"
                required
                [(ngModel)]="will.data" name="date"
-               #date="ngModel">
+               #date="ngModel" min="{{today}}">
         <div [hidden]="date.valid || date.pristine"
              class="alert alert-danger">
           Date is required
@@ -45,7 +45,7 @@
 
       <div class="element">
         <label for="time">Time*</label>
-        <input type="text" class="form-control" id="time"
+        <input type="time" class="form-control" id="time"
                required
                [(ngModel)]="will.ora" name="time"
                #time="ngModel">
@@ -60,7 +60,7 @@
         <input type="number" class="form-control" id="length"
                required
                [(ngModel)]="will.lunghezza" name="length"
-               #length="ngModel">
+               #length="ngModel" min="0">
         <div [hidden]="length.valid || length.pristine"
              class="alert alert-danger">
           Length is required
@@ -96,7 +96,7 @@
         <input type="number" class="form-control" id="numb"
                required
                [(ngModel)]="will.numpart" name="numb"
-               #numb="ngModel">
+               #numb="ngModel" min="0">
         <div [hidden]="numb.valid || numb.pristine"
              class="alert alert-danger">
              Number of Partecipants is required

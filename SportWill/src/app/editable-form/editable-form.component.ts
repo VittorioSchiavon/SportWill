@@ -38,11 +38,14 @@ onSubmit() { this.submitted = true; }
   toCreate:Boolean=false;
   sports=sports;
 
+  today="";
+
   constructor(private route: ActivatedRoute,
     public willdata: WillDataService,
     public auth: AuthenticationService) {}
 
   ngOnInit() {
+    this.setDate();
     if(this.auth.isAuthenticated()) this.user= JSON.parse(localStorage.getItem("userData")+"");
     //this.will=JSON.parse(decodeURIComponent(this.route.snapshot.paramMap.get("id")+""));
     this.id=decodeURIComponent(this.route.snapshot.paramMap.get("id")+"");
@@ -106,5 +109,21 @@ onSubmit() { this.submitted = true; }
   changedValue(willS:any, event: any){
     willS=event.value;
     console.log(willS);
+  }
+
+
+  setDate(){
+    var todayDate= new Date();
+    console.log(todayDate)
+    this.today= todayDate.getFullYear()+ "-";
+    if ((todayDate.getMonth()+1).toString().length==1){
+      this.today+="0" }
+      this.today+=(todayDate.getMonth()+1).toString()+"-";
+
+      if (todayDate.getDate().toString().length==1){
+        this.today+="0" }
+      this.today+=todayDate.getDate().toString();
+      console.log(this.today)
+
   }
 }

@@ -2,14 +2,10 @@
   <form #willForm="ngForm">
     <h1 *ngIf="this.will.titolo==''" id="loading">Loading Data...</h1>
     <div class="container"  *ngIf="this.will.titolo!=''">
-      <h1>Will Detail</h1>
+      <h1>{{will.titolo}}</h1>
       <img [src]="imgSrc" alt="activity image">
 
         <div class="elementContainer">
-          <div class="element">
-            <label for="title">Title</label>
-            <div>{{will.titolo}}</div>
-          </div>
 
           <div class="element">
             <label for="sport">Sport</label>
