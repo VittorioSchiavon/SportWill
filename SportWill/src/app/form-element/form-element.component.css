@@ -16,6 +16,7 @@
   align-items: center;
 }
 
+
 #label{
   display:block;
   padding:0.3em;
@@ -27,7 +28,7 @@
   background-color: var(--main-text-color);
 }
 
-.element .input{
+.input, select{
   overflow: auto;
   resize: none;
   text-align: center;
@@ -38,6 +39,7 @@
   font-weight: bold;
   padding: 0.5em;
   margin: 0.5em;
+  color: var(--main-bg-color-hover);
 }
 
 .alert{
@@ -48,9 +50,9 @@
 }
 
 .notActive{
-  pointer-events:none;
   background-color: transparent;
   appearance:none;
+  color:white;
 }
 
 
@@ -59,6 +61,7 @@
   background-color: var(--main-bg-color-hover);
   min-width: 5em;
   border-radius: 5px;
+  color: white;
 }
 
  .tooltiptext {
@@ -76,4 +79,12 @@
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+.alert{
+  color: white;
+  background-color: rgba(244, 67, 54,0.5);
+  border-radius: 5px;
+  padding:1em;
+  margin-bottom: 10px;
 }

@@ -1,7 +1,7 @@
 
-<div class="background">
+<div class="background" *ngIf="message!=''">
   <div class="container">
     <h1 id="message">{{message}}</h1>
-    <button class="button" routerLink="/homepage" (click)="this.clicked.emit();">Home</button>
+    <button class="button" (click)="buttonClicked()">Home</button>
   </div>
 </div>

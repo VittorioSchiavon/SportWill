@@ -22,7 +22,7 @@
         [editable]="true"></app-form-element>
 
         <app-form-element [(content)]="will.lunghezza"
-        [contentName]="'Lenght'"
+        [contentName]="'Length'"
         [editable]="true"></app-form-element>
 
         <app-form-element [(content)]="will.luogo"
@@ -51,4 +51,4 @@
     </div>
   </form><br>
 </div>
-<app-message [message]="message" *ngIf="message!==''"></app-message>
+<app-message [message]="message" *ngIf="message!==''" (clicked)="message=''"></app-message>

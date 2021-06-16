@@ -1,17 +1,65 @@
 <div>
   <form #willForm="ngForm">
+    <h1 *ngIf="this.will.titolo==''" id="loading">Loading Data...</h1>
     <div class="container"  *ngIf="this.will.titolo!=''">
       <h1>Will Detail</h1>
       <img [src]="imgSrc" alt="activity image">
-      <div class="elementContainer">
 
-        <app-form-element [(content)]="will.nomeproprietario"
-        [contentName]="'Name'"
-        [editable]="false"></app-form-element>
+        <div class="elementContainer">
+          <div class="element">
+            <label for="title">Title</label>
+            <div>{{will.titolo}}</div>
+          </div>
 
-        <app-form-element [(content)]="will.titolo"
-        [contentName]="'Title'"
-        [editable]="editable"></app-form-element>
+          <div class="element">
+            <label for="sport">Sport</label>
+            <div>{{will.sport}}</div>
+
+          </div>
+
+          <div class="element">
+            <label for="date">Date</label>
+            <div>{{will.data}}</div>
+
+          </div>
+
+          <div class="element">
+            <label for="time">Time</label>
+            <div>{{will.ora}}</div>
+
+          </div>
+
+          <div class="element">
+            <label for="length">Length</label>
+            <div>{{will.lunghezza}}</div>
+          </div>
+
+          <div class="element">
+            <label for="place">Place</label>
+            <div>{{will.luogo}}</div>
+
+          </div>
+
+          <div class="element">
+            <label for="stages">Stages</label>
+            <div>{{will.tappe}}</div>
+
+          </div>
+
+          <div class="element">
+            <label for="numb">Number of Partecipants</label>
+            <div>{{will.numpart}}</div>
+          </div>
+
+          <div class="element">
+            <label for="description">Description</label>
+            <div>{{will.descrizione}}</div>
+
+        </div>
+
+<!--
+        <div>will.titolo"</div>
+
 
         <app-form-element [(content)]="will.sport"
         [contentName]="'Sport'"
@@ -26,7 +74,7 @@
         [editable]="editable"></app-form-element>
 
         <app-form-element [(content)]="will.lunghezza"
-        [contentName]="'Lenght'"
+        [contentName]="'Length'"
         [editable]="editable"></app-form-element>
 
         <app-form-element [(content)]="will.luogo"
@@ -46,7 +94,7 @@
         [contentName]="'Description'"
         [editable]="editable"></app-form-element>
 
-        <!--
+
         <div class="element">
           <label for="lenght">Lenght</label>
           <input type="text" name="lenght" required [(ngModel)]="will.lenght"
@@ -61,7 +109,7 @@
         -->
       </div>
 
-      <app-message [message]="message" *ngIf="message!==''"></app-message>
+      <app-message [message]="message" *ngIf="message!==''" (clicked)="message=''"></app-message>
 
       <div class="buttons">
         <button type="button" *ngIf="!editable" class="goBack" routerLink="/homepage">Go Back</button>

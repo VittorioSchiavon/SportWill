@@ -12,7 +12,7 @@
         Please insert a name.
     </div>
     <label for="surname"><b>Surname*</b></label>
-    <input type="text" placeholder="Enter Surname" name="surname" required [(ngModel)]="model.cognome"
+    <input type="email" placeholder="Enter Surname" name="surname" required [(ngModel)]="model.cognome"
     class="form-control"  #surname="ngModel">
     <div [hidden]="surname.valid || surname.pristine"
         class="alert">
@@ -20,7 +20,7 @@
     </div>
     <label for="email"><b>Email*</b></label>
     <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]="model.email"
-    class="form-control"  #email="ngModel">
+    class="form-control"  #email="ngModel"  ngModel email>
     <div [hidden]="email.valid || email.pristine"
         class="alert">
         Please insert an Email.
@@ -35,7 +35,7 @@
     </div>
 
 
-    <app-message [message]="message" *ngIf="message!==''"></app-message>
+    <app-message [message]="message" *ngIf="message!==''" (clicked)="message=''"></app-message>
     <div class="buttons">
       <button type="button" class="cancelbtn" routerLink="/homepage">Cancel</button>
       <button [disabled]="!signUpForm.form.valid" type="submit" class="signinbtn"

@@ -1,5 +1,6 @@
 <div class="element">
   <div id="label">{{contentName}}</div>
+  <!--
   <div [class.tooltip]="contentName==='Sport' && editable">
     <div [attr.contenteditable]="editable" class="input"
     [class.editable]="editable"
@@ -10,23 +11,34 @@
   </div>
   </div>
 
+-->
 
 
-
-<!--
-  <input type="text" *ngIf="editable && !(contentName=='Sport')" name="{{contentName}}" required [(ngModel)]="content"
-  class="form-control"  #Formname="ngModel" class="input"
-  [class.notActive]="!editable" (ngModelChange)="onModelChange($event)" >
+  <input class="input" type="text" *ngIf="!(editable
+  && (contentName=='Sport') || contentName=='Description')" placeholder="insert {{contentName}}"
+  name="{{contentName}}" required [(ngModel)]="content"
+  class="form-control"  #Formname="ngModel" class="input" (ngModelChange)="onModelChange($event)"
+  [class.notActive]="!editable" [class.editable]="editable" [readonly]="!editable">
 
   <select name="{{contentName}}" class="input" class="form-control"
-    *ngIf="contentName=='Sport'" [(ngModel)]="content"
+    *ngIf="editable && contentName=='Sport'" [(ngModel)]="content"
     (ngModelChange)="onModelChange($event)"
-    [class.notActive]="!editable" >
+    [class.notActive]="!editable" [class.editable]="editable">
     <option *ngFor="let sport of sports" [value]="sport">{{sport}}</option>
   </select>
 
 
+  <textarea name="{{contentName}}" id="textarea" cols="30" rows="5" class="input" placeholder="insert {{contentName}}"
+  (ngModelChange)="onModelChange($event)"  *ngIf="(contentName=='Description')" [(ngModel)]="content"
+  name="{{contentName}}" [class.notActive]="!editable" [readonly]="!editable"
+  [class.editable]="editable"
+  ></textarea>
 
+  <div class="alert" *ngIf="!valid">Insert a valid {{contentName}}</div>
+
+
+
+<!--
     <div [hidden]="Formname.valid || Formname.pristine" *ngIf="!(contentName=='Sport')"
       class="alert">
       Please insert a {{contentName}}.

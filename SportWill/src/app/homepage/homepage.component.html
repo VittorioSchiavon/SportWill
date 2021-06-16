@@ -4,10 +4,10 @@
     <input (click)="checked()" type="checkbox" >
     <p>Find only my activities</p>
   </div>
+  <h1 *ngIf="this.cards==null" id="loading">Loading Data...</h1>
   <div id="cardContainer">
       <app-will-card  *ngFor ="let card of cards"  [class.invisible]="card.proprietario!==username && !checkedValue" [will]="card"></app-will-card>
   </div>
-
   <button id="addWill" routerLink="/add" *ngIf="this.auth.isAuthenticated()">+</button>
 </div>
 

@@ -4,8 +4,8 @@
     <p>Please fill in this form to log in.</p>
 
     <label for="email"><b>Email*</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]="model.email"
-    class="form-control"  #email="ngModel">
+    <input type="email" placeholder="Enter Email" name="email" required [(ngModel)]="model.email"
+    class="form-control"  #email="ngModel"  ngModel email>
     <div [hidden]="email.valid || email.pristine"
         class="alert">
         Please insert an Email.
@@ -18,7 +18,7 @@
         class="alert">
         Please insert the password.
     </div>
-    <app-message [message]="message" *ngIf="message!==''"></app-message>
+    <app-message [message]="message" *ngIf="message!==''" (clicked)="message=''"></app-message>
     <div class="buttons">
       <button type="button" class="cancelbtn" routerLink="/homepage">Cancel</button>
       <button [disabled]="!signInForm.form.valid"

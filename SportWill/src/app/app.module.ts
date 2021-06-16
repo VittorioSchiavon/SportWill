@@ -17,6 +17,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormElementComponent } from './form-element/form-element.component';
 import { MessageComponent } from './message/message.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { EditableFormComponent } from './editable-form/editable-form.component';
 
 
 
@@ -34,6 +35,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FormElementComponent,
     MessageComponent,
     NotFoundComponent,
+    EditableFormComponent,
   ],
   imports: [
     BrowserModule,

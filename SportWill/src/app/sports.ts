@@ -1,4 +1,4 @@
-export var sports=[
+export const sports=[
   "Soccer",
 "Basketball",
 "Tennis",
@@ -8,7 +8,8 @@ export var sports=[
 "Volleyball",
 "Swimming",
 "Boxing",
-"Rugby"
+"Rugby",
+"Other"
 ];
 
 

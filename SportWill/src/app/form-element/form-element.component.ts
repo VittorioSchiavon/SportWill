@@ -18,15 +18,39 @@ export class FormElementComponent implements OnInit {
 
   sports?:string[];
   staticContent?:any;
+  valid: Boolean=true;
 
   onModelChange(value: any) {
     //console.log(value.target.innerHTML);
-    this.contentChange.emit(value.target.innerHTML);
+    this.contentChange.emit(this.content);
+    this.isValid();
   }
   constructor() { }
 
   ngOnInit(): void {
     this.sports=sports;
     this.staticContent=this.content;
+  }
+
+
+  isValid(){
+    var regexpTime = new RegExp('^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$');
+    //var regexpDate = new RegExp('^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$');
+    if(this.content==""){
+      this.valid=false;
+    }
+    else if((this.contentName=="Length" || this.contentName=="Number of Partecipants") &&  isNaN(this.content)){
+      this.valid=false;
+      console.log("here")
+    }
+    else if((this.contentName=="Time") &&  !regexpTime.test(this.content)){
+      this.valid=false;
+    }/*
+    else if((this.contentName=="Date") &&  !regexpDate.test(this.content)){
+      this.valid=false;
+    }*/else{
+      this.valid=true;
+    }
+
   }
 }
