@@ -35,9 +35,9 @@ export class WillCardComponent implements OnInit {
   ngOnInit(): void {
 
     if (sports.includes(this.will.sport)){
-      this.imgSrc=`../../assets/SportImages/${this.will.sport}.jpeg`;
+      this.imgSrc=`../../assets/SportImages/Icons/${this.will.sport}.svg`;
     }else{
-      this.imgSrc=`../../assets/SportImages/Other.jpeg`;
+      this.imgSrc=`../../assets/SportImages/Icons/Other.svg`;
     }
 
   }

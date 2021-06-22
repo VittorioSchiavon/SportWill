@@ -18,16 +18,6 @@
 }
 
 
-label{
-  display:block;
-  padding:0.3em;
-  margin: auto;
-  text-align: center;
-  font-weight: bold;
-  color:var(--secondary-text-color);
-  border-radius: 5px;
-  background-color: var(--main-text-color);
-}
 
 input, select, textarea{
   overflow: auto;
@@ -45,12 +35,12 @@ input, select, textarea{
   background-color: var(--main-bg-color-hover);
   min-width: 5em;
   border-radius: 5px;
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 
-.alert{
-  color: white;
+.element .alert{
+  color: var(--main-bg-color);
   background-color: rgba(244, 67, 54,0.5);
   border-radius: 5px;
   padding:1em;
@@ -85,18 +75,51 @@ form:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-img{
-  width: 100%;
-  height: 20em;
-  background-position: center center;
-  background-repeat: no-repeat;
-  object-fit: none;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin: auto;
+#activity{
+
+    width: 15em;
+    height: 15em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin: auto;
+    display:block;
+  }
+
+ .labelContainer{
+    background-color: var(--main-text-color);
+    border-radius: 5px;
+    height:6em;
+    width:6em;
+    text-transform: uppercase;
+    font-weight:bolder;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+label{
   display:block;
-  padding: 10px;
+  padding:0.3em;
+  font-size: 1em;
+  margin: auto;
+  text-align: center;
+
+  color:var(--main-bg-color);
   border-radius: 5px;
+  background-color: var(--main-text-color);
+}
+
+.element div{
+  overflow: auto;
+  resize: none;
+  text-align: center;
+  height: fit-content;
+  width: fit-content;
+  margin: auto;
+  font-size: 1em;
+  font-weight: bolder;
+  padding: 0.5em;
+  margin: 0.5em;
+  color: var(--secondary-text-color);
 }
 
 .logo{

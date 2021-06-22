@@ -14,7 +14,14 @@
 }
 
 h1{
-  color:var(--main-text-color);
+  background-color:var(--main-text-color);
+  color:var(--main-bg-color);
+  display:block;
+  text-transform: uppercase;
+  width:fit-content;
+  margin: auto;
+  padding: 1em;
+  border-radius: 10px;
 }
 
 .switch{
@@ -22,14 +29,15 @@ h1{
   align-items: center;
   margin:10px;
   font-weight: bold;
+  color:var(--secondary-text-color);
 }
 .switch input{
   margin:10px;
   width: 1.8em;
   height: 1.8em;
   transition: 0.3s;
-}
 
+}
 
 #addWill{
   border-radius: 50%;
@@ -40,6 +48,7 @@ h1{
   width:4em;
   height: 4em;
   background-color:var(--main-text-color);
+  color:var(--main-bg-color);
   transition: 0.5s;
   font-size: 1.2em;
   font-weight: bolder;

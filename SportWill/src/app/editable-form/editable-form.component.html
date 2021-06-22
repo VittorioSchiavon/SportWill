@@ -1,13 +1,17 @@
 <div class="container">
   <div>
-    <h1 *ngIf="toCreate" class="formTitle"> Create Will</h1>
-    <h1 *ngIf="!toCreate" class="formTitle"> Modify Will</h1>
+
     <form (ngSubmit)="onSubmit()" #willForm="ngForm">
-      <img [src]="imgSrc" alt="activity image" [class.logo]="imgSrc=='../../assets/Images/logo.png'">
+      <h1 *ngIf="toCreate" class="formTitle"> Create Will</h1>
+      <h1 *ngIf="!toCreate" class="formTitle"> Modify Will</h1>
+      <img [src]="imgSrc" alt="activity image" id="activity" [class.logo]="imgSrc=='../../assets/Images/logo.png'">
 
 <div class="elementContainer">
       <div class="element">
-        <label for="title">Title*</label>
+        <div class="labelContainer">
+          <img src="../../assets/Icons/title.svg"alt="Title Icon">
+          <label for="title">Title*</label>
+          </div>
         <input type="text" class="form-control" id="title"
                required
                [(ngModel)]="will.titolo" name="title"
@@ -19,11 +23,14 @@
       </div>
 
       <div class="element">
-        <label for="sport">Sport*</label>
+        <div class="labelContainer">
+          <img src="../../assets/Icons/sports.svg"alt="Sport Icon">
+          <label for="sport">Sport*</label>
+          </div>
         <select class="form-control" id="sport"
                 required
                 [(ngModel)]="will.sport" name="sport"
-                #sport="ngModel">
+                #sport="ngModel" (change)="setImage()">
           <option *ngFor="let pow of sports" [value]="pow">{{pow}}</option>
         </select>
         <div [hidden]="sport.valid || sport.pristine" class="alert alert-danger">
@@ -32,7 +39,10 @@
       </div>
 
       <div class="element">
-        <label for="date">Date*</label>
+        <div class="labelContainer">
+          <img src="../../assets/Icons/date.svg"alt="Date Icon">
+          <label for="date">Date*</label>
+          </div>
         <input type="date" class="form-control" id="date"
                required
                [(ngModel)]="will.data" name="date"
@@ -44,7 +54,10 @@
       </div>
 
       <div class="element">
-        <label for="time">Time*</label>
+        <div class="labelContainer">
+          <img src="../../assets/Icons/time.svg"alt="Time Icon">
+          <label for="time">Time*</label>
+          </div>
         <input type="time" class="form-control" id="time"
                required
                [(ngModel)]="will.ora" name="time"
@@ -56,7 +69,11 @@
       </div>
 
       <div class="element">
-        <label for="length">Length*</label>
+        <div class="labelContainer">
+          <img src="../../assets/Icons/length.svg"alt="Length Icon">
+          <label for="length">Length*</label>
+          </div>
+
         <input type="number" class="form-control" id="length"
                required
                [(ngModel)]="will.lunghezza" name="length"
@@ -68,7 +85,10 @@
       </div>
 
       <div class="element">
-        <label for="place">Place*</label>
+        <div class="labelContainer">
+          <img src="../../assets/Icons/place.svg"alt="Place Icon">
+          <label for="place">Place*</label>
+          </div>
         <input type="text" class="form-control" id="place"
                required
                [(ngModel)]="will.luogo" name="place"
@@ -80,7 +100,11 @@
       </div>
 
       <div class="element">
-        <label for="stages">Stages*</label>
+        <div class="labelContainer">
+          <img src="../../assets/Icons/stages.svg"alt="Stages Icon">
+          <label for="stages">Stages*</label>
+          </div>
+
         <input type="text" class="form-control" id="stages"
                required
                [(ngModel)]="will.tappe" name="stages"
@@ -92,7 +116,10 @@
       </div>
 
       <div class="element">
-        <label for="numb">Number of Partecipants*</label>
+        <div class="labelContainer">
+          <img src="../../assets/Icons/number.svg"alt="Number of Partecipants Icon">
+          <label for="numb">Partecipants*</label>
+          </div>
         <input type="number" class="form-control" id="numb"
                required
                [(ngModel)]="will.numpart" name="numb"
@@ -104,7 +131,10 @@
       </div>
 
       <div class="element">
-        <label for="description">Description*</label>
+        <div class="labelContainer">
+          <img src="../../assets/Icons/description.svg"alt="Description Icon">
+          <label for="description">Description*</label>
+          </div>
         <textarea type="text" class="form-control" id="name" cols="30" rows="5"
                required
                [(ngModel)]="will.descrizione" name="description"

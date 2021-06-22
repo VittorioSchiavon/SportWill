@@ -64,7 +64,7 @@ onSubmit() { this.submitted = true; }
   submitChanges(){
     this.willdata.createWill(this.will).subscribe(
       res=>{
-        this.message="Will Changed Successfully.";
+        this.message="Will Saved Successfully.";
         console.log(res);
       },
       err=>{
@@ -100,9 +100,9 @@ onSubmit() { this.submitted = true; }
 
     setImage(){
       if (sports.includes(this.will.sport)){
-        this.imgSrc=`../../assets/SportImages/${this.will.sport}.jpeg`;
+        this.imgSrc=`../../assets/SportImages/Icons/${this.will.sport}.svg`;
       }else{
-        this.imgSrc=`../../assets/SportImages/Other.jpeg`;
+        this.imgSrc=`../../assets/SportImages/Icons/Other.svg`;
       }
     }
 

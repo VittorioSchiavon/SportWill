@@ -86,9 +86,9 @@ export class WillDetailComponent implements OnInit {
 
     setImage(){
       if (sports.includes(this.will.sport)){
-        this.imgSrc=`../../assets/SportImages/${this.will.sport}.jpeg`;
+        this.imgSrc=`../../assets/SportImages/Icons/${this.will.sport}.svg`;
       }else{
-        this.imgSrc=`../../assets/SportImages/other.jpg`;
+        this.imgSrc=`../../assets/SportImages/Icons/Other.svg`;
       }
     }
   changedValue(willS:any, event: any){

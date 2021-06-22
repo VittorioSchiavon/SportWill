@@ -22,12 +22,9 @@ form:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-img{
-  width: 100%;
-  height: 20em;
-  background-position: center center;
-  background-repeat: no-repeat;
-  object-fit: none;
+#activity{
+  width: 20em;
+  height:20em;
   margin-top: 10px;
   margin-bottom: 10px;
   margin: auto;
@@ -35,6 +32,22 @@ img{
   padding: 10px;
   border-radius: 5px;
 }
+
+.labelContainer{
+  background-color: var(--main-text-color);
+  border-radius: 5px;
+  height:6em;
+  width:6em;
+  text-transform: uppercase;
+  font-weight:bolder;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.element .info{
+  font-size: 1.5em;
+}
+
 .buttons{
   display:flex;
   margin: auto;
@@ -100,16 +113,19 @@ button:disabled{
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  max-width: 15em;
+
 }
 
 
 label{
   display:block;
   padding:0.3em;
+  font-size: 1em;
   margin: auto;
   text-align: center;
   font-weight: bold;
-  color:var(--secondary-text-color);
+  color:var(--main-bg-color);
   border-radius: 5px;
   background-color: var(--main-text-color);
 }
@@ -122,8 +138,8 @@ label{
   width: fit-content;
   margin: auto;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: bolder;
   padding: 0.5em;
   margin: 0.5em;
-  color: white;
+  color: var(--secondary-text-color);
 }
