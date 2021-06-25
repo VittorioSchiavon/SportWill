@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,10 +10,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { WillCardComponent } from './will-card/will-card.component';
 import { WillDetailComponent } from './will-detail/will-detail.component';
 import { FooterComponent } from './footer/footer.component';
-import { AddWillComponent } from './add-will/add-will.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { FormElementComponent } from './form-element/form-element.component';
 import { MessageComponent } from './message/message.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { EditableFormComponent } from './editable-form/editable-form.component';
@@ -29,10 +26,8 @@ import { EditableFormComponent } from './editable-form/editable-form.component';
     WillCardComponent,
     WillDetailComponent,
     FooterComponent,
-    AddWillComponent,
     SignInComponent,
     SignUpComponent,
-    FormElementComponent,
     MessageComponent,
     NotFoundComponent,
     EditableFormComponent,

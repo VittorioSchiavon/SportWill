@@ -8,12 +8,10 @@ import { AuthenticationService } from '../authentication.service';
 @Component({
   selector: 'app-will-card',
   templateUrl: './will-card.component.html',
-  styleUrls: ['./will-card.component.css']
+  styleUrls: ['./will-card.component.css'],
 })
 export class WillCardComponent implements OnInit {
-
-
-  @Input()   will : any/*=
+  @Input() will: any; /*=
   {
     "proprietario": "",
     "titolo": "",
@@ -27,28 +25,24 @@ export class WillCardComponent implements OnInit {
     "numpart" : "",
     "nomeproprietario":"",
   };*/
-  imgSrc?:string
+  imgSrc?: string;
 
-  constructor(private router: Router,
-    public auth: AuthenticationService) { }
+  constructor(private router: Router, public auth: AuthenticationService) {}
 
   ngOnInit(): void {
-
-    if (sports.includes(this.will.sport)){
-      this.imgSrc=`../../assets/SportImages/Icons/${this.will.sport}.svg`;
-    }else{
-      this.imgSrc=`../../assets/SportImages/Icons/Other.svg`;
+    if (sports.includes(this.will.sport)) {
+      this.imgSrc = `../../assets/SportImages/Icons/${this.will.sport}.svg`;
+    } else {
+      this.imgSrc = `../../assets/SportImages/Icons/Other.svg`;
     }
-
   }
 
-
-  navigate(){
-    if(this.auth.getUserEmail()==this.will.proprietario){
-      this.router.navigate([`/edit/${ encodeURIComponent(this.will.id)}`]);
-    }else{
-      this.router.navigate([`/detail/${ encodeURIComponent(this.will.id)}`]);
+  navigate() {
+    //quando viene premuta la card, se il proprietario della will premuta è l'utente => vado alla schermata di moficica passando l'ID, sennò alla schermata di visualizzazione
+    if (this.auth.getUserEmail() == this.will.proprietario) {
+      this.router.navigate([`/edit/${encodeURIComponent(this.will.id)}`]);
+    } else {
+      this.router.navigate([`/detail/${encodeURIComponent(this.will.id)}`]);
     }
-
   }
 }

@@ -1,3 +1,6 @@
+
+//array contenente tutti gli sport selezionabili dall'utente
+
 export const sports=[
   "Soccer",
 "Basketball",

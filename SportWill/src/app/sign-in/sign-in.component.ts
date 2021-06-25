@@ -19,13 +19,13 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  signIn(){
+  signIn(){ // chiama il servizio di login passando i dati ottenuti dall'utente
     this.auth.logInUser(this.model)
     .subscribe(
       res=> {
         console.log(res);
         this.message="You Are Now Logged In.";
-        localStorage.setItem('userData',JSON.stringify(res));
+        localStorage.setItem('userData',JSON.stringify(res));   //salvo in memoria i dati utente
       },
       err=>{
         this.message="Error, try again.";

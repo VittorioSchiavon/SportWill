@@ -4,38 +4,22 @@ import { AuthenticationService } from '../authentication.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  isLogged: Boolean = false; //memorizza se l'utente ha effettuato l'accesso
+  message: string = '';
 
-  active:Boolean=false;
-
-  isLogged:Boolean=false;
-  message: string="";
-
-  constructor(public auth: AuthenticationService) { }
+  constructor(public auth: AuthenticationService) {}
 
   ngOnInit(): void {
-    this.isLogged=this.auth.isAuthenticated();
+    this.isLogged = this.auth.isAuthenticated();
   }
 
-  toggleNavBar(){
-    console.log("ciao");
-  }
-
-  dropMenu(){
-    this.active=!this.active;
-  }
-
-  logout(){
-
+  logout() {
+    // effettua il logout e printa il messaggio
     this.auth.logout();
-    //window.location.reload();
-    this.isLogged=false;
-    this.message="You Are Now Logged Out.";
-
-}
-
-  login(){
+    this.isLogged = false;
+    this.message = 'You Are Now Logged Out.';
   }
 }

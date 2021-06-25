@@ -1,10 +1,23 @@
 <div class="topnav">
-  <app-message [message]="message" *ngIf="message!==''" (clicked)="message=''"></app-message>
-  <img src="../../assets/Images/logo.png" alt="logo" id="logo" routerLink="homepage">
+  <app-message
+    [message]="message"
+    *ngIf="message !== ''"
+    (clicked)="message = ''"
+  ></app-message>
+  <!--Vedi il component Message-->
+  <img
+    src="../../assets/Images/logo.png"
+    alt="logo"
+    id="logo"
+    routerLink="homepage"
+  />
   <div class="container">
-    <a routerLink="homepage">Home</a>
-    <a routerLink="signIn" *ngIf="!this.auth.isAuthenticated()" (click)="login()">Login</a>
+    <a routerLink="homepage" class="homeLink">Home</a>
+    <a
+      routerLink="signIn"
+      *ngIf="!this.auth.isAuthenticated()"
+      >Login</a
+    >
     <a (click)="logout()" *ngIf="this.auth.isAuthenticated()">Logout</a>
   </div>
 </div>
-

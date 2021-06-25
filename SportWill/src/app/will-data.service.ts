@@ -13,7 +13,7 @@ export class WillDataService {
   constructor(private http: HttpClient) { }
 
 
-
+//HTTP Header che serve per l'autenticazione su bae JWT
   httpOptions = {
     headers: new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem("token")}`,'Access-Control-Allow-Origin': '*'})
   };

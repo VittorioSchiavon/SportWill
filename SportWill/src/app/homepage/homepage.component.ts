@@ -20,10 +20,10 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
-    if(this.auth.isAuthenticated()) this.username=(JSON.parse(localStorage.getItem("userData")+"")).email;
+    if(this.auth.isAuthenticated()) this.username=(JSON.parse(localStorage.getItem("userData")+"")).email;  // ottengo i dati utente
   }
 
-  getData(){
+  getData(){ // ottengo i dati dal server usando il service
     this.willdata.getWillData().subscribe(
       res=>{
         console.log(res);

@@ -11,7 +11,7 @@ import { AuthenticationService } from '../authentication.service';
 })
 export class EditableFormComponent implements OnInit {
 
-will: any= {
+will: any= {  // contenitore dei dati della will
   "proprietario": "",
   "titolo": "",
   "descrizione":"",
@@ -25,20 +25,16 @@ will: any= {
   "nomeproprietario":"",
 };
 
-submitted = false;
-
-onSubmit() { this.submitted = true; }
 
   imgSrc: string= '../../assets/Images/logo.png';
   message: string="";
   id?:string;
 
-  editable:Boolean=false;
   user:any="";
   toCreate:Boolean=false;
-  sports=sports;
+  sports=sports; //array con l'elenco degli sport disponibili
 
-  today="";
+  today=""; //variabile che tiene la data corrente
 
   constructor(private route: ActivatedRoute,
     public willdata: WillDataService,
@@ -46,14 +42,13 @@ onSubmit() { this.submitted = true; }
 
   ngOnInit() {
     this.setDate();
-    if(this.auth.isAuthenticated()) this.user= JSON.parse(localStorage.getItem("userData")+"");
-    //this.will=JSON.parse(decodeURIComponent(this.route.snapshot.paramMap.get("id")+""));
-    this.id=decodeURIComponent(this.route.snapshot.paramMap.get("id")+"");
-    this.will.proprietario= this.user.email ; //prendo dalla local storage i dati utente
+    if(this.auth.isAuthenticated()) this.user= JSON.parse(localStorage.getItem("userData")+""); //prendo dalla local storage i dati utente
+    this.id=decodeURIComponent(this.route.snapshot.paramMap.get("id")+"");  //ottengo l'id dall'URL
+    this.will.proprietario= this.user.email ; //setto l'email corretta
     this.will.nomeproprietario=this.user.nome+ " "+ this.user.cognome; //setto il nome corretto
 
 
-    if(this.id=="null"){
+    if(this.id=="null"){ //se l'URL è null vuol dire che devo craere una will nuova
       this.toCreate=true;
     }else{
       this.getWill();
@@ -61,7 +56,7 @@ onSubmit() { this.submitted = true; }
 
   }
 
-  submitChanges(){
+  submitChanges(){ //quando invocata richiama la chiamata http POST Bdi creazione/modifica di una will presente nel service will data
     this.willdata.createWill(this.will).subscribe(
       res=>{
         this.message="Will Saved Successfully.";
@@ -73,7 +68,7 @@ onSubmit() { this.submitted = true; }
     );
     }
 
-  deleteWill(){
+  deleteWill(){ //quando invocata richiama la chiamata http SELETE di eliminazione di una will
     this.willdata.deleteWill(this.will).subscribe(
       res=>{
         console.log(res);
@@ -85,7 +80,7 @@ onSubmit() { this.submitted = true; }
     );
     }
 
-  getWill(){
+  getWill(){ //quando invocata richiama la chiamata http GET di ottenimento di una will con dato id
     this.willdata.getSingleWill(this.id+"").subscribe(
       res=>{
       this.will=res;
@@ -106,13 +101,8 @@ onSubmit() { this.submitted = true; }
       }
     }
 
-  changedValue(willS:any, event: any){
-    willS=event.value;
-    console.log(willS);
-  }
 
-
-  setDate(){
+  setDate(){    //setta la data nel formato corretto
     var todayDate= new Date();
     console.log(todayDate)
     this.today= todayDate.getFullYear()+ "-";

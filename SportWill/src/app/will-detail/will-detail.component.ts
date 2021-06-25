@@ -13,13 +13,13 @@ import { AuthenticationService } from '../authentication.service';
 })
 export class WillDetailComponent implements OnInit {
 
-  will ?: any=
+  will : any=
     {
       "proprietario": "",
       "titolo": "",
       "descrizione":"",
       "luogo": "",
-      "lunghezza": 0,
+      "lunghezza": "",
       "tappe": "",
       "data": "",
       "ora": "",
@@ -28,11 +28,9 @@ export class WillDetailComponent implements OnInit {
       "nomeproprietario":"",
     };
 
-  imgSrc: string= '../../assets/Images/logo.png';
   message: string="";
   id?:string;
 
-  editable:Boolean=false;
   username="";
 
   constructor(private route: ActivatedRoute,
@@ -40,59 +38,20 @@ export class WillDetailComponent implements OnInit {
     public auth: AuthenticationService) {}
 
   ngOnInit() {
-    if(this.auth.isAuthenticated()) this.username= JSON.parse(localStorage.getItem("userData")+"").email;
-    //this.will=JSON.parse(decodeURIComponent(this.route.snapshot.paramMap.get("id")+""));
-    this.id=decodeURIComponent(this.route.snapshot.paramMap.get("id")+"");
+    if(this.auth.isAuthenticated()) this.username= JSON.parse(localStorage.getItem("userData")+"").email;  // se l'utente è autenticato ottengo il suo ID (email)
+    this.id=decodeURIComponent(this.route.snapshot.paramMap.get("id")+""); // ricavo l'ID dall'URL
     this.getWill();
   }
 
-  submitChanges(){
-    this.willdata.createWill(this.will).subscribe(
-      res=>{
-        this.message="Will Changed Successfully.";
-        console.log(res);
-      },
-      err=>{
-        this.message="Error, try again.";
-      }
-    );
-    }
-
-  deleteWill(){
-    this.willdata.deleteWill(this.will).subscribe(
-      res=>{
-        console.log(res);
-        this.message="Will Removed Successfully.";
-      },
-      err=>{
-        this.message="Error, try again.";
-      }
-    );
-    }
-
-  getWill(){
+  getWill(){ //Ottengo i dati della will con l'ID desiderato
     this.willdata.getSingleWill(this.id+"").subscribe(
       res=>{
       this.will=res;
       console.log(res);
-      this.setImage();
-      this.editable=(this.will.proprietario==this.username);
       },
       err=>{
         this.message="Error, try again.";
       }
     );
     }
-
-    setImage(){
-      if (sports.includes(this.will.sport)){
-        this.imgSrc=`../../assets/SportImages/Icons/${this.will.sport}.svg`;
-      }else{
-        this.imgSrc=`../../assets/SportImages/Icons/Other.svg`;
-      }
-    }
-  changedValue(willS:any, event: any){
-    willS=event.value;
-    console.log(willS);
-  }
 }

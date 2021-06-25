@@ -12,7 +12,12 @@ form{
 form:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+@media screen and (max-width: 480px) {
 
+  form{
+    width: 100%;
+    }
+}
 h1{
   color:var(--main-text-color);
   margin-bottom:10px;
@@ -59,7 +64,11 @@ button {
 button:hover {
   opacity:1;
 }
-
+.buttons{
+  display:flex;
+  margin: auto;
+  justify-content: center;
+}
 button:disabled{
   background-color: #aaa9a9;
   color: rgb(238, 237, 237);

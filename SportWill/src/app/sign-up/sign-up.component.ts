@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  signUp(){
+  signUp(){  // chiama il servizio di login passando i dati ottenuti dall'utente
     this.auth.registerUser(this.model)
     .subscribe(
       res=>{

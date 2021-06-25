@@ -1,260 +1,255 @@
 <div class="container">
   <div>
+    <form #willForm="ngForm">
+      <h1 *ngIf="toCreate" class="formTitle">Create Will</h1>
+      <!--in base alla flag toCreate viene mostrato un titolo diverso -->
+      <h1 *ngIf="!toCreate" class="formTitle">Modify Will</h1>
+      <img
+        [src]="imgSrc"
+        alt="activity image"
+        id="activity"
+        [class.logo]="imgSrc == '../../assets/Images/logo.png'"
+      />
 
-    <form (ngSubmit)="onSubmit()" #willForm="ngForm">
-      <h1 *ngIf="toCreate" class="formTitle"> Create Will</h1>
-      <h1 *ngIf="!toCreate" class="formTitle"> Modify Will</h1>
-      <img [src]="imgSrc" alt="activity image" id="activity" [class.logo]="imgSrc=='../../assets/Images/logo.png'">
-
-<div class="elementContainer">
-      <div class="element">
-        <div class="labelContainer">
-          <img src="../../assets/Icons/title.svg"alt="Title Icon">
-          <label for="title">Title*</label>
+      <div class="elementContainer">
+        <div class="element">
+          <div class="labelContainer">
+            <img src="../../assets/Icons/title.svg" alt="Title Icon" />
+            <label for="title">Title*</label>
           </div>
-        <input type="text" class="form-control" id="title"
-               required
-               [(ngModel)]="will.titolo" name="title"
-               #title="ngModel">
-        <div [hidden]="title.valid || title.pristine"
-             class="alert alert-danger">
-          Title is required
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required
+            [(ngModel)]="will.titolo"
+            name="title"
+            #title="ngModel"
+          />
+          <div
+            [hidden]="title.valid || title.pristine"
+            class="alert alert-danger"
+          >
+            <!--Se il campo dati è valido o non è ancora stato toccato questo div viene nascosto-->
+            Title is required
+          </div>
+        </div>
+
+        <div class="element">
+          <div class="labelContainer">
+            <img src="../../assets/Icons/sports.svg" alt="Sport Icon" />
+            <label for="sport">Sport*</label>
+          </div>
+          <select
+            class="form-control"
+            id="sport"
+            required
+            [(ngModel)]="will.sport"
+            name="sport"
+            #sport="ngModel"
+            (change)="setImage()"
+          >
+            <option *ngFor="let pow of sports" [value]="pow">{{ pow }}</option>
+          </select>
+          <div
+            [hidden]="sport.valid || sport.pristine"
+            class="alert alert-danger"
+          >
+            Sport is required
+          </div>
+        </div>
+
+        <div class="element">
+          <div class="labelContainer">
+            <img src="../../assets/Icons/date.svg" alt="Date Icon" />
+            <label for="date">Date*</label>
+          </div>
+          <input
+            type="date"
+            class="form-control"
+            id="date"
+            required
+            [(ngModel)]="will.data"
+            name="date"
+            #date="ngModel"
+            min="{{ today }}"
+          />
+          <div
+            [hidden]="date.valid || date.pristine"
+            class="alert alert-danger"
+          >
+            Date is required
+          </div>
+        </div>
+
+        <div class="element">
+          <div class="labelContainer">
+            <img src="../../assets/Icons/time.svg" alt="Time Icon" />
+            <label for="time">Time*</label>
+          </div>
+          <input
+            type="time"
+            class="form-control"
+            id="time"
+            required
+            [(ngModel)]="will.ora"
+            name="time"
+            #time="ngModel"
+          />
+          <div
+            [hidden]="time.valid || time.pristine"
+            class="alert alert-danger"
+          >
+            Time is required
+          </div>
+        </div>
+
+        <div class="element">
+          <div class="labelContainer">
+            <img src="../../assets/Icons/length.svg" alt="Length Icon" />
+            <label for="length">Length*</label>
+          </div>
+
+          <input
+            type="number"
+            class="form-control"
+            id="length"
+            required
+            [(ngModel)]="will.lunghezza"
+            name="length"
+            #length="ngModel"
+            min="0"
+          />
+          <div
+            [hidden]="length.valid || length.pristine"
+            class="alert alert-danger"
+          >
+            Length is required
+          </div>
+        </div>
+
+        <div class="element">
+          <div class="labelContainer">
+            <img src="../../assets/Icons/place.svg" alt="Place Icon" />
+            <label for="place">Place*</label>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            id="place"
+            required
+            [(ngModel)]="will.luogo"
+            name="place"
+            #place="ngModel"
+          />
+          <div
+            [hidden]="place.valid || place.pristine"
+            class="alert alert-danger"
+          >
+            Place is required
+          </div>
+        </div>
+
+        <div class="element">
+          <div class="labelContainer">
+            <img src="../../assets/Icons/stages.svg" alt="Stages Icon" />
+            <label for="stages">Stages*</label>
+          </div>
+
+          <input
+            type="text"
+            class="form-control"
+            id="stages"
+            required
+            [(ngModel)]="will.tappe"
+            name="stages"
+            #stages="ngModel"
+          />
+          <div
+            [hidden]="stages.valid || stages.pristine"
+            class="alert alert-danger"
+          >
+            Stages is required
+          </div>
+        </div>
+
+        <div class="element">
+          <div class="labelContainer">
+            <img
+              src="../../assets/Icons/number.svg"
+              alt="Number of Partecipants Icon"
+            />
+            <label for="numb">Partecipants*</label>
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="numb"
+            required
+            [(ngModel)]="will.numpart"
+            name="numb"
+            #numb="ngModel"
+            min="0"
+          />
+          <div
+            [hidden]="numb.valid || numb.pristine"
+            class="alert alert-danger"
+          >
+            Number of Partecipants is required
+          </div>
+        </div>
+
+        <div class="element">
+          <div class="labelContainer">
+            <img
+              src="../../assets/Icons/description.svg"
+              alt="Description Icon"
+            />
+            <label for="description">Description*</label>
+          </div>
+          <textarea
+            type="text"
+            class="form-control"
+            id="name"
+            cols="20"
+            rows="5"
+            required
+            [(ngModel)]="will.descrizione"
+            name="description"
+            #description="ngModel"
+          ></textarea>
+          <div
+            [hidden]="description.valid || description.pristine"
+            class="alert alert-danger"
+          >
+            Description is required
+          </div>
         </div>
       </div>
 
-      <div class="element">
-        <div class="labelContainer">
-          <img src="../../assets/Icons/sports.svg"alt="Sport Icon">
-          <label for="sport">Sport*</label>
-          </div>
-        <select class="form-control" id="sport"
-                required
-                [(ngModel)]="will.sport" name="sport"
-                #sport="ngModel" (change)="setImage()">
-          <option *ngFor="let pow of sports" [value]="pow">{{pow}}</option>
-        </select>
-        <div [hidden]="sport.valid || sport.pristine" class="alert alert-danger">
-          Sport is required
-        </div>
-      </div>
-
-      <div class="element">
-        <div class="labelContainer">
-          <img src="../../assets/Icons/date.svg"alt="Date Icon">
-          <label for="date">Date*</label>
-          </div>
-        <input type="date" class="form-control" id="date"
-               required
-               [(ngModel)]="will.data" name="date"
-               #date="ngModel" min="{{today}}">
-        <div [hidden]="date.valid || date.pristine"
-             class="alert alert-danger">
-          Date is required
-        </div>
-      </div>
-
-      <div class="element">
-        <div class="labelContainer">
-          <img src="../../assets/Icons/time.svg"alt="Time Icon">
-          <label for="time">Time*</label>
-          </div>
-        <input type="time" class="form-control" id="time"
-               required
-               [(ngModel)]="will.ora" name="time"
-               #time="ngModel">
-        <div [hidden]="time.valid || time.pristine"
-             class="alert alert-danger">
-          Time is required
-        </div>
-      </div>
-
-      <div class="element">
-        <div class="labelContainer">
-          <img src="../../assets/Icons/length.svg"alt="Length Icon">
-          <label for="length">Length*</label>
-          </div>
-
-        <input type="number" class="form-control" id="length"
-               required
-               [(ngModel)]="will.lunghezza" name="length"
-               #length="ngModel" min="0">
-        <div [hidden]="length.valid || length.pristine"
-             class="alert alert-danger">
-          Length is required
-        </div>
-      </div>
-
-      <div class="element">
-        <div class="labelContainer">
-          <img src="../../assets/Icons/place.svg"alt="Place Icon">
-          <label for="place">Place*</label>
-          </div>
-        <input type="text" class="form-control" id="place"
-               required
-               [(ngModel)]="will.luogo" name="place"
-               #place="ngModel">
-        <div [hidden]="place.valid || place.pristine"
-             class="alert alert-danger">
-          Place is required
-        </div>
-      </div>
-
-      <div class="element">
-        <div class="labelContainer">
-          <img src="../../assets/Icons/stages.svg"alt="Stages Icon">
-          <label for="stages">Stages*</label>
-          </div>
-
-        <input type="text" class="form-control" id="stages"
-               required
-               [(ngModel)]="will.tappe" name="stages"
-               #stages="ngModel">
-        <div [hidden]="stages.valid || stages.pristine"
-             class="alert alert-danger">
-          Stages is required
-        </div>
-      </div>
-
-      <div class="element">
-        <div class="labelContainer">
-          <img src="../../assets/Icons/number.svg"alt="Number of Partecipants Icon">
-          <label for="numb">Partecipants*</label>
-          </div>
-        <input type="number" class="form-control" id="numb"
-               required
-               [(ngModel)]="will.numpart" name="numb"
-               #numb="ngModel" min="0">
-        <div [hidden]="numb.valid || numb.pristine"
-             class="alert alert-danger">
-             Number of Partecipants is required
-        </div>
-      </div>
-
-      <div class="element">
-        <div class="labelContainer">
-          <img src="../../assets/Icons/description.svg"alt="Description Icon">
-          <label for="description">Description*</label>
-          </div>
-        <textarea type="text" class="form-control" id="name" cols="30" rows="5"
-               required
-               [(ngModel)]="will.descrizione" name="description"
-               #description="ngModel"></textarea>
-        <div [hidden]="description.valid || description.pristine"
-             class="alert alert-danger">
-             Description is required
-        </div>
-      </div>
-
-    </div>
-
-      <app-message [message]="message" *ngIf="message!==''" (clicked)="message=''"></app-message>
+      <app-message
+        [message]="message"
+        *ngIf="message !== ''"
+        (clicked)="message = ''"
+      ></app-message>
+      <!--Vedi il component Message-->
 
       <div class="buttons">
-        <button type="button" class="goBack"  routerLink="/homepage">Go Back</button>
-        <button type="button" class="deletebtn" *ngIf="!toCreate"
-        (click)="deleteWill()">Delete</button>
-        <button [disabled]="!willForm.form.valid"
-        (click)="submitChanges()">Save Changes</button>
+        <button type="button" class="goBack" routerLink="/homepage">
+          Go Back
+        </button>
+        <button
+          type="button"
+          class="deletebtn"
+          *ngIf="!toCreate"
+          (click)="deleteWill()"
+        >
+          Delete
+        </button>
+        <button [disabled]="!willForm.form.valid" (click)="submitChanges()">
+          Save Changes
+        </button>
       </div>
     </form>
   </div>
-
-  <!--
-  <div [hidden]="!submitted">
-    <h2>You submitted the following:</h2>
-    <div class="row">
-      <div class="col-xs-3">Name</div>
-      <div class="col-xs-9">{{ model.name }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Alter Ego</div>
-      <div class="col-xs-9">{{ model.alterEgo }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Power</div>
-      <div class="col-xs-9">{{ model.power }}</div>
-    </div>
-    <br>
-    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
-  </div>
 </div>
--->
-
-
-<!--
-
-
-<form #willForm="ngForm">
-  <div class="container"  *ngIf="this.will.titolo!=''">
-    <h1>Will Detail</h1>
-    <img [src]="imgSrc" alt="activity image">
-    <div class="elementContainer">
-
-      <app-form-element [(content)]="will.titolo"
-      [contentName]="'Title'"
-      [editable]="editable"></app-form-element>
-
-      <app-form-element [(content)]="will.sport"
-      [contentName]="'Sport'"
-      [editable]="editable"></app-form-element>
-
-      <app-form-element [(content)]="will.data"
-      [contentName]="'Date'"
-      [editable]="editable"></app-form-element>
-
-      <app-form-element [(content)]="will.ora"
-      [contentName]="'Time'"
-      [editable]="editable"></app-form-element>
-
-      <app-form-element [(content)]="will.lunghezza"
-      [contentName]="'Lenght'"
-      [editable]="editable"></app-form-element>
-
-      <app-form-element [(content)]="will.luogo"
-      [contentName]="'Place'"
-      [editable]="editable"></app-form-element>
-
-
-      <app-form-element [(content)]="will.tappe"
-      [contentName]="'Stages'"
-      [editable]="editable"></app-form-element>
-
-      <app-form-element [(content)]="will.numpart"
-      [contentName]="'Number of Partecipants'"
-      [editable]="editable"></app-form-element>
-
-      <app-form-element [(content)]="will.descrizione"
-      [contentName]="'Description'"
-      [editable]="editable"></app-form-element>
-
-
-      <div class="element">
-        <label for="lenght">Lenght</label>
-        <input type="text" name="lenght" required [(ngModel)]="will.lenght"
-        class="form-control"  #lenght="ngModel"
-        [class.notActive]="!editable">
-        <div [hidden]="lenght.valid || lenght.pristine"
-            class="alert">
-            Please insert a Lenght.
-        </div>
-      </div>
-      [disabled]="!willForm.form.valid || !willForm.dirty"
-
-    </div>
-
-    <div class="buttons">
-      <button type="button" *ngIf="!editable" class="goBack" routerLink="/homepage">Go Back</button>
-      <button type="button" *ngIf="editable" class="deletebtn"
-      (click)="deleteWill()">Delete</button>
-      <button  *ngIf="editable"
-      (click)="submitChanges()">Save Changes</button>
-    </div>
-
-<div class="element">
-  <div id="label">{{contentName}}</div>
-<input class="input" type="text" *ngIf="!(editable
-  && ((contentName=='Sport') || (contentName=='Description')))"
-  name="{{contentName}}" required [(ngModel)]="content"
-  class="form-control"  #Formname="ngModel" class="input" (ngModelChange)="onModelChange($event)"
-  [class.notActive]="!editable" >
- -->

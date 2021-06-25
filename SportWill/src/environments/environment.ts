@@ -2,7 +2,7 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
+export const environment = {    //insieme di tutti gli endpoint della API utilizzati
   production: false,
   getDataUrl:'http://synchost.ns0.it:8080/uscite/',
   sendDataUrl:"http://synchost.ns0.it:8080/uscite/inserisci",

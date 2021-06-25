@@ -7,7 +7,8 @@
   <h1 *ngIf="this.cards==null" id="loading">Loading Data...</h1>
   <div id="cardContainer">
       <app-will-card  *ngFor ="let card of cards"  [class.invisible]="card.proprietario!==username && !checkedValue" [will]="card"></app-will-card>
+      <!--ciclo all'interno dell'array di Will. Se l'utente ha selezionato di vedere solo le proprie will controllo che il proprietario della will sia l'utente-->
   </div>
-  <button id="addWill" routerLink="/add" *ngIf="this.auth.isAuthenticated()">+</button>
+  <button id="addWill" routerLink="/add" *ngIf="this.auth.isAuthenticated()">+</button><!--Visibile solo se si è autenticati-->
 </div>
 

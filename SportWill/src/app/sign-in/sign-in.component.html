@@ -18,7 +18,7 @@
         class="alert">
         Please insert the password.
     </div>
-    <app-message [message]="message" *ngIf="message!==''" (clicked)="message=''"></app-message>
+    <app-message [message]="message" *ngIf="message!==''" (clicked)="message=''"></app-message> <!--Vedi il component Message-->
     <div class="buttons">
       <button type="button" class="cancelbtn" routerLink="/homepage">Cancel</button>
       <button [disabled]="!signInForm.form.valid"
