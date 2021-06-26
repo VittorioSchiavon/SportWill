@@ -26,7 +26,7 @@ will: any= {  // contenitore dei dati della will
 };
 
 
-  imgSrc: string= '../../assets/Images/logo.png';
+  imgSrc: string= '../../assets/SportImages/Icons/Other.svg';
   message: string="";
   id?:string;
 
